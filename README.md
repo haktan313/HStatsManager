@@ -29,3 +29,5 @@ This plugin is compatible with Unreal Engine 5.2 and is designed to work in both
 
 
 ## Some Features
+
+## Architecture and Blueprint & C++ Examples
