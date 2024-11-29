@@ -30,4 +30,23 @@ This plugin is compatible with Unreal Engine 5.2 and is designed to work in both
 
 ## Some Features
 
+- **Predefined Health Stat**: The plugin includes a built-in health stat, ready to use out of the box. It simplifies implementing basic health mechanics in your game.
+
+- **Event-Driven Responses**:
+    The plugin includes built-in functions to react to key gameplay events:
+        On Damage Taken: Trigger responses when the character takes damage.
+        On Death: Automatically handle character death events with customizable functionality.
+
+- **Custom Stat Creation**: Beyond the predefined health stat, you can create unlimited custom stats tailored to your game's needs, such as stamina, mana, or other unique stats.
+
+- **BaseStat Widget Integration**:
+
+    Includes a pre-made health binding to seamlessly connect health values to a progress bar in your game's UI.
+    For custom stats, the widget provides the versatile GetPercentageOfStat function. Just input the stat's name, and it returns the current percentage, ready for display.
+  -To use the BaseStat Widget for stats:
+
+    Create the Widget: Add the BaseStat Widget to your UI.
+    Assign the StatHandler: Link your character's HStatHandler component to the widget's StatHandlerObject reference.
+
+
 ## Architecture and Blueprint & C++ Examples
