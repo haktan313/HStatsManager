@@ -11,6 +11,8 @@ The HStatsManager Plugin allows you to easily manage character stats in your gam
 - [Installation Instructions](#installation-instructions)
 - [Some Features](#some-features)
 - [Architecture and Blueprint & C++ Examples](#architecture-and-blueprint--c-examples)
+        - [HStatHandler](#hstathandler)
+        - [HWidget_BaseStat](#hwidget--basestat)
 
 ## Supported Versions
 This plugin is compatible with Unreal Engine 5.2 and is designed to work in both Blueprint and C++ projects.
