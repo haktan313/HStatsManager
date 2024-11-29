@@ -88,7 +88,13 @@ The HStatHandler Component is the core system for managing character stats in th
    ![hstatvaraibles](https://github.com/user-attachments/assets/71474f37-d905-4aa8-bf99-7f0f12d9e219)
 
 ### HWidget_BaseStat
+
+- The BaseStat Widget in the HStatsManager Plugin is designed to seamlessly display stats like health or custom-defined stats in your game's UI. Here’s how it works based on the provided examples:
+
+  - ### Creating the Widget:
+    When creating a new widget, select the HWidget_BaseStat class as the parent. This ensures your widget has all the pre-built functionality for stat management and visualization.
 ![widgetcreate](https://github.com/user-attachments/assets/b2d95793-b51d-4126-8c08-b5471390076d)
+
 
 
 
