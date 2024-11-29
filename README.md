@@ -71,19 +71,19 @@ The HStatHandler Component is the core system for managing character stats in th
    ![ondeath and ondamage](https://github.com/user-attachments/assets/e2e0cbe1-b061-4335-9e1f-50ff15cf25b2)   ![constructure and functions c++](https://github.com/user-attachments/assets/c55445db-838a-4dea-a784-03d4a126e918)
    ![death and damage c++](https://github.com/user-attachments/assets/42811925-b7ec-4893-a6f5-c18aa022a5ab)
 
-   - **DamageTo**:
-   - **HealTo**:
-   - **OnDeath**:
-   - **OnDamageResponse**:
-   - **CanDecreaseStatValue**:
-   - **DecreaseStatValue**:
-   - **IncreaseStatValue**:
-
+   - **DamageTo**: Applies damage to a target actor based on a specified type and amount, triggering OnDamageResponse and, if health reaches zero, OnDeath.
+   - **HealTo**: Heal a specified amount of health to a target actor, clamped by the maximum health value.
+   - **OnDeath**: A dispatcher event that triggers when a character dies, providing the death type for custom reactions.
+   - **OnDamageResponse**: A dispatcher event that triggers when the character takes damage, providing the damage type for real-time effects.
+   - **CanDecreaseStatValue**: Checks if a specified stat on a target actor, identified by the entered StatName, can be reduced by a given amount.
+   - **DecreaseStatValue**: Reduces the value of the stat identified by the entered StatName on the target actor by the specified amount. Both Current and Max values for the stat must already be set in the target's HStatHandler.
+   - **IncreaseStatValue**: Increases the value of the stat identified by the entered StatName on the target actor by the specified amount. Both Current and Max values for the stat must already be set in the target's HStatHandler.
+   - 
  - **Varaibles**:
-   - **CurrentHealth**:
-   - **MaxHealth**:
-   - **StatNameCurrentValue**:
-   - **StatNameMaxValue**:
+   - **CurrentHealth**: The current health value of the actor, decreased by damage and increased by healing.
+   - **MaxHealth**:  The maximum possible health value for the actor.
+   - **StatNameCurrentValue**: A map storing the current values of custom stats identified by their names.
+   - **StatNameMaxValue**: A map storing the maximum values of custom stats identified by their names. 
    
    ![hstatvaraibles](https://github.com/user-attachments/assets/71474f37-d905-4aa8-bf99-7f0f12d9e219)
 
