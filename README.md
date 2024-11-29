@@ -43,6 +43,7 @@ This plugin is compatible with Unreal Engine 5.2 and is designed to work in both
 
     Includes a pre-made health binding to seamlessly connect health values to a progress bar in your game's UI.
     For custom stats, the widget provides the versatile GetPercentageOfStat function. Just input the stat's name, and it returns the current percentage, ready for display.
+
   -To use the BaseStat Widget for stats:
 
     Create the Widget: Add the BaseStat Widget to your UI.
