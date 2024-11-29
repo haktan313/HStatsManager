@@ -57,6 +57,14 @@ This plugin is compatible with Unreal Engine 5.2 and is designed to work in both
 
 ### HStatHandler
 ![hstatcomponent](https://github.com/user-attachments/assets/b11cf9b2-eaee-41c6-8da1-f4550ac8fe6c)
+
+The HStatHandler Component is the core system for managing character stats in the HStatsManager Plugin. It provides an efficient and flexible way to handle predefined and custom stats, including health, stamina, or any stat you wish to create.
+
+  - Health Management: Built-in support for managing health, including taking damage, healing, and broadcasting health-related events.
+
+  - Custom Stat Support: Allows you to dynamically create and manage any number of custom stats with no additional setup required.
+
+  - Stat Operations: Includes functions for increasing, decreasing, and clamping stat values within their defined ranges.
  
  - **Functions & Events**:
    ![functions](https://github.com/user-attachments/assets/3dafbe43-b463-4a6b-85e9-1b715d4163b3)
