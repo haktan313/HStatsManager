@@ -106,8 +106,10 @@ The HStatHandler Component is the core system for managing character stats in th
   - ### Widget Integration:
 
     To use the widget in your game:
-    Step 1: Add the widget to your UI using CreateWidget.
-    Step 2: Assign the StatHandlerObject property of the widget to reference the HStatHandler component on your character. This connection allows the widget to pull real-time data from the character's stats.
+    
+    - **Step 1**: Add the widget to your UI using CreateWidget.
+    - **Step 2**: Assign the StatHandlerObject property of the widget to reference the HStatHandler component on your character. This connection allows the widget to pull real-time data from the character's stats.
+      
     ![functions - copia](https://github.com/user-attachments/assets/0c1d237b-2a6b-42da-880a-0e9e508ee929)
 
 
