@@ -55,7 +55,7 @@ This plugin is compatible with Unreal Engine 5.2 and is designed to work in both
 
 ### HStatHandler
 ![hstatcomponent](https://github.com/user-attachments/assets/b11cf9b2-eaee-41c6-8da1-f4550ac8fe6c)
- - 
+ 
  - **Functions & Events**:
    ![functions](https://github.com/user-attachments/assets/3dafbe43-b463-4a6b-85e9-1b715d4163b3)
    ![ondeath and ondamage](https://github.com/user-attachments/assets/e2e0cbe1-b061-4335-9e1f-50ff15cf25b2)   ![constructure and functions c++](https://github.com/user-attachments/assets/c55445db-838a-4dea-a784-03d4a126e918)
@@ -64,4 +64,9 @@ This plugin is compatible with Unreal Engine 5.2 and is designed to work in both
  - **Varaibles**:
    
    ![hstatvaraibles](https://github.com/user-attachments/assets/71474f37-d905-4aa8-bf99-7f0f12d9e219)
+
+### HWidget_BaseStat
+![widgetcreate](https://github.com/user-attachments/assets/b2d95793-b51d-4126-8c08-b5471390076d)
+
+
 
