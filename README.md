@@ -66,7 +66,7 @@ The HStatHandler Component is the core system for managing character stats in th
 
   - **Stat Operations**: Includes functions for increasing, decreasing, and clamping stat values within their defined ranges.
  
- - **Functions & Events**:
+ - ### Functions & Events:
    ![functions](https://github.com/user-attachments/assets/3dafbe43-b463-4a6b-85e9-1b715d4163b3)
    ![ondeath and ondamage](https://github.com/user-attachments/assets/e2e0cbe1-b061-4335-9e1f-50ff15cf25b2)   ![constructure and functions c++](https://github.com/user-attachments/assets/c55445db-838a-4dea-a784-03d4a126e918)
    ![death and damage c++](https://github.com/user-attachments/assets/42811925-b7ec-4893-a6f5-c18aa022a5ab)
@@ -78,7 +78,7 @@ The HStatHandler Component is the core system for managing character stats in th
    - **CanDecreaseStatValue**: Checks if a specified stat on a target actor, identified by the entered StatName, can be reduced by a given amount.
    - **DecreaseStatValue**: Reduces the value of the stat identified by the entered StatName on the target actor by the specified amount. Both Current and Max values for the stat must already be set in the target's HStatHandler.
    - **IncreaseStatValue**: Increases the value of the stat identified by the entered StatName on the target actor by the specified amount. Both Current and Max values for the stat must already be set in the target's HStatHandler.
-   - 
+     
  - **Varaibles**:
    - **CurrentHealth**: The current health value of the actor, decreased by damage and increased by healing.
    - **MaxHealth**:  The maximum possible health value for the actor.
