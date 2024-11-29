@@ -71,7 +71,19 @@ The HStatHandler Component is the core system for managing character stats in th
    ![ondeath and ondamage](https://github.com/user-attachments/assets/e2e0cbe1-b061-4335-9e1f-50ff15cf25b2)   ![constructure and functions c++](https://github.com/user-attachments/assets/c55445db-838a-4dea-a784-03d4a126e918)
    ![death and damage c++](https://github.com/user-attachments/assets/42811925-b7ec-4893-a6f5-c18aa022a5ab)
 
+   - **DamageTo**:
+   - **HealTo**:
+   - **OnDeath**:
+   - **OnDamageResponse**:
+   - **CanDecreaseStatValue**:
+   - **DecreaseStatValue**:
+   - **IncreaseStatValue**:
+
  - **Varaibles**:
+   - **CurrentHealth**:
+   - **MaxHealth**:
+   - **StatNameCurrentValue**:
+   - **StatNameMaxValue**:
    
    ![hstatvaraibles](https://github.com/user-attachments/assets/71474f37-d905-4aa8-bf99-7f0f12d9e219)
 
