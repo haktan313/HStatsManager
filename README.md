@@ -114,6 +114,6 @@ The HStatHandler Component is the core system for managing character stats in th
     ![functions - copia](https://github.com/user-attachments/assets/0c1d237b-2a6b-42da-880a-0e9e508ee929)
 
 ## Tutorial Video
-[H3DPathfinding Plugin Tutorial]([https://www.youtube.com/watch?v=51_4N3GaQ9c](https://youtu.be/IpXztwQfopE))
+[HStatsManager Plugin Tutorial](https://youtu.be/IpXztwQfopE)
 
 
