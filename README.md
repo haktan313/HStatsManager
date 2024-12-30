@@ -80,18 +80,18 @@ The HStatHandler Component is the core system for managing character stats in th
    - **CanDecreaseStatValue**: Checks if a specified stat on a target actor, identified by the entered StatName, can be reduced by a given amount.
    - **DecreaseStatValue**: Reduces the value of the stat identified by the entered StatName on the target actor by the specified amount. Both Current and Max values for the stat must already be set in the target's HStatHandler.
    - **IncreaseStatValue**: Increases the value of the stat identified by the entered StatName on the target actor by the specified amount. Both Current and Max values for the stat must already be set in the target's HStatHandler.
-   - **OnStatReachMaxValue**: 
-   - **OnStatReachMinValue**: 
+   - **OnStatReachMaxValue**: A dispatcher event that is triggered when the chosen stat reaches its maximum value.
+   - **OnStatReachMinValue**: A dispatcher event that is triggered when the chosen stat reaches its minimum value.
      
  - **Varaibles**:
    - **CurrentHealth**: The current health value of the actor, decreased by damage and increased by healing.
    - **MaxHealth**:  The maximum possible health value for the actor.
-   - **CanTakeDamage**:
-   - **CanHeal**: 
+   - **CanTakeDamage**: If true, the character can take damage.
+   - **CanHeal**: If true, the character can heal.
    - **StatNameCurrentValue**: A map storing the current values of custom stats identified by their names.
    - **StatNameMaxValue**: A map storing the maximum values of custom stats identified by their names.
-   - **StatNameCanDecrease**:
-   - **StatNameCanIncrease**: 
+   - **StatNameCanDecrease**: If true, the stat you write can decrease.
+   - **StatNameCanIncrease**: If true, the stat you write can increase.
    
    ![Screenshot 2024-12-30 120013](https://github.com/user-attachments/assets/28e0a19b-4fc7-46ee-99c3-d5967f41077c)
 
