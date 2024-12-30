@@ -12,12 +12,13 @@ void EmptyLinkFunctionForGeneratedCodeHStatHandler() {}
 // Cross Module References
 	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UActorComponent();
+	ENGINE_API UClass* Z_Construct_UClass_UAnimMontage_NoRegister();
 	HSTATSMANAGER_API UClass* Z_Construct_UClass_UHStatHandler();
 	HSTATSMANAGER_API UClass* Z_Construct_UClass_UHStatHandler_NoRegister();
-	HSTATSMANAGER_API UEnum* Z_Construct_UEnum_HStatsManager_E_DamageType();
-	HSTATSMANAGER_API UEnum* Z_Construct_UEnum_HStatsManager_E_DeathType();
 	HSTATSMANAGER_API UFunction* Z_Construct_UDelegateFunction_HStatsManager_OnDamageResponse__DelegateSignature();
 	HSTATSMANAGER_API UFunction* Z_Construct_UDelegateFunction_HStatsManager_OnDeath__DelegateSignature();
+	HSTATSMANAGER_API UFunction* Z_Construct_UDelegateFunction_HStatsManager_StatReachMaxValue__DelegateSignature();
+	HSTATSMANAGER_API UFunction* Z_Construct_UDelegateFunction_HStatsManager_StatReachMinValue__DelegateSignature();
 	HSTATSMANAGER_API UScriptStruct* Z_Construct_UScriptStruct_FS_DamageInfo();
 	UPackage* Z_Construct_UPackage__Script_HStatsManager();
 // End Cross Module References
@@ -25,21 +26,18 @@ void EmptyLinkFunctionForGeneratedCodeHStatHandler() {}
 	{
 		struct _Script_HStatsManager_eventOnDeath_Parms
 		{
-			E_DeathType DeathType;
+			UAnimMontage* DeathAnimation;
 		};
-		static const UECodeGen_Private::FBytePropertyParams NewProp_DeathType_Underlying;
-		static const UECodeGen_Private::FEnumPropertyParams NewProp_DeathType;
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_DeathAnimation;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UECodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UECodeGen_Private::FBytePropertyParams Z_Construct_UDelegateFunction_HStatsManager_OnDeath__DelegateSignature_Statics::NewProp_DeathType_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
-	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UDelegateFunction_HStatsManager_OnDeath__DelegateSignature_Statics::NewProp_DeathType = { "DeathType", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(_Script_HStatsManager_eventOnDeath_Parms, DeathType), Z_Construct_UEnum_HStatsManager_E_DeathType, METADATA_PARAMS(nullptr, 0) }; // 558005314
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UDelegateFunction_HStatsManager_OnDeath__DelegateSignature_Statics::NewProp_DeathAnimation = { "DeathAnimation", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(_Script_HStatsManager_eventOnDeath_Parms, DeathAnimation), Z_Construct_UClass_UAnimMontage_NoRegister, METADATA_PARAMS(nullptr, 0) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UDelegateFunction_HStatsManager_OnDeath__DelegateSignature_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_HStatsManager_OnDeath__DelegateSignature_Statics::NewProp_DeathType_Underlying,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_HStatsManager_OnDeath__DelegateSignature_Statics::NewProp_DeathType,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_HStatsManager_OnDeath__DelegateSignature_Statics::NewProp_DeathAnimation,
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_HStatsManager_OnDeath__DelegateSignature_Statics::Function_MetaDataParams[] = {
@@ -56,35 +54,32 @@ void EmptyLinkFunctionForGeneratedCodeHStatHandler() {}
 		}
 		return ReturnFunction;
 	}
-void FOnDeath_DelegateWrapper(const FMulticastScriptDelegate& OnDeath, E_DeathType DeathType)
+void FOnDeath_DelegateWrapper(const FMulticastScriptDelegate& OnDeath, UAnimMontage* DeathAnimation)
 {
 	struct _Script_HStatsManager_eventOnDeath_Parms
 	{
-		E_DeathType DeathType;
+		UAnimMontage* DeathAnimation;
 	};
 	_Script_HStatsManager_eventOnDeath_Parms Parms;
-	Parms.DeathType=DeathType;
+	Parms.DeathAnimation=DeathAnimation;
 	OnDeath.ProcessMulticastDelegate<UObject>(&Parms);
 }
 	struct Z_Construct_UDelegateFunction_HStatsManager_OnDamageResponse__DelegateSignature_Statics
 	{
 		struct _Script_HStatsManager_eventOnDamageResponse_Parms
 		{
-			E_DamageType DamageType;
+			UAnimMontage* DamageAnimation;
 		};
-		static const UECodeGen_Private::FBytePropertyParams NewProp_DamageType_Underlying;
-		static const UECodeGen_Private::FEnumPropertyParams NewProp_DamageType;
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_DamageAnimation;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UECodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UECodeGen_Private::FBytePropertyParams Z_Construct_UDelegateFunction_HStatsManager_OnDamageResponse__DelegateSignature_Statics::NewProp_DamageType_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
-	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UDelegateFunction_HStatsManager_OnDamageResponse__DelegateSignature_Statics::NewProp_DamageType = { "DamageType", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(_Script_HStatsManager_eventOnDamageResponse_Parms, DamageType), Z_Construct_UEnum_HStatsManager_E_DamageType, METADATA_PARAMS(nullptr, 0) }; // 203792599
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UDelegateFunction_HStatsManager_OnDamageResponse__DelegateSignature_Statics::NewProp_DamageAnimation = { "DamageAnimation", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(_Script_HStatsManager_eventOnDamageResponse_Parms, DamageAnimation), Z_Construct_UClass_UAnimMontage_NoRegister, METADATA_PARAMS(nullptr, 0) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UDelegateFunction_HStatsManager_OnDamageResponse__DelegateSignature_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_HStatsManager_OnDamageResponse__DelegateSignature_Statics::NewProp_DamageType_Underlying,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_HStatsManager_OnDamageResponse__DelegateSignature_Statics::NewProp_DamageType,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_HStatsManager_OnDamageResponse__DelegateSignature_Statics::NewProp_DamageAnimation,
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_HStatsManager_OnDamageResponse__DelegateSignature_Statics::Function_MetaDataParams[] = {
@@ -103,15 +98,103 @@ void FOnDeath_DelegateWrapper(const FMulticastScriptDelegate& OnDeath, E_DeathTy
 		}
 		return ReturnFunction;
 	}
-void FOnDamageResponse_DelegateWrapper(const FMulticastScriptDelegate& OnDamageResponse, E_DamageType DamageType)
+void FOnDamageResponse_DelegateWrapper(const FMulticastScriptDelegate& OnDamageResponse, UAnimMontage* DamageAnimation)
 {
 	struct _Script_HStatsManager_eventOnDamageResponse_Parms
 	{
-		E_DamageType DamageType;
+		UAnimMontage* DamageAnimation;
 	};
 	_Script_HStatsManager_eventOnDamageResponse_Parms Parms;
-	Parms.DamageType=DamageType;
+	Parms.DamageAnimation=DamageAnimation;
 	OnDamageResponse.ProcessMulticastDelegate<UObject>(&Parms);
+}
+	struct Z_Construct_UDelegateFunction_HStatsManager_StatReachMaxValue__DelegateSignature_Statics
+	{
+		struct _Script_HStatsManager_eventStatReachMaxValue_Parms
+		{
+			FString statName;
+		};
+		static const UECodeGen_Private::FStrPropertyParams NewProp_statName;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FStrPropertyParams Z_Construct_UDelegateFunction_HStatsManager_StatReachMaxValue__DelegateSignature_Statics::NewProp_statName = { "statName", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(_Script_HStatsManager_eventStatReachMaxValue_Parms, statName), METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UDelegateFunction_HStatsManager_StatReachMaxValue__DelegateSignature_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_HStatsManager_StatReachMaxValue__DelegateSignature_Statics::NewProp_statName,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_HStatsManager_StatReachMaxValue__DelegateSignature_Statics::Function_MetaDataParams[] = {
+		{ "Comment", "//This delegate will be used to broadcast the damage type.\n" },
+		{ "ModuleRelativePath", "Public/HStatHandler.h" },
+		{ "ToolTip", "This delegate will be used to broadcast the damage type." },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_HStatsManager_StatReachMaxValue__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UPackage__Script_HStatsManager, nullptr, "StatReachMaxValue__DelegateSignature", nullptr, nullptr, sizeof(Z_Construct_UDelegateFunction_HStatsManager_StatReachMaxValue__DelegateSignature_Statics::_Script_HStatsManager_eventStatReachMaxValue_Parms), Z_Construct_UDelegateFunction_HStatsManager_StatReachMaxValue__DelegateSignature_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_HStatsManager_StatReachMaxValue__DelegateSignature_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(Z_Construct_UDelegateFunction_HStatsManager_StatReachMaxValue__DelegateSignature_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_HStatsManager_StatReachMaxValue__DelegateSignature_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UDelegateFunction_HStatsManager_StatReachMaxValue__DelegateSignature()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UDelegateFunction_HStatsManager_StatReachMaxValue__DelegateSignature_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+void FStatReachMaxValue_DelegateWrapper(const FMulticastScriptDelegate& StatReachMaxValue, const FString& statName)
+{
+	struct _Script_HStatsManager_eventStatReachMaxValue_Parms
+	{
+		FString statName;
+	};
+	_Script_HStatsManager_eventStatReachMaxValue_Parms Parms;
+	Parms.statName=statName;
+	StatReachMaxValue.ProcessMulticastDelegate<UObject>(&Parms);
+}
+	struct Z_Construct_UDelegateFunction_HStatsManager_StatReachMinValue__DelegateSignature_Statics
+	{
+		struct _Script_HStatsManager_eventStatReachMinValue_Parms
+		{
+			FString statName;
+		};
+		static const UECodeGen_Private::FStrPropertyParams NewProp_statName;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FStrPropertyParams Z_Construct_UDelegateFunction_HStatsManager_StatReachMinValue__DelegateSignature_Statics::NewProp_statName = { "statName", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(_Script_HStatsManager_eventStatReachMinValue_Parms, statName), METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UDelegateFunction_HStatsManager_StatReachMinValue__DelegateSignature_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_HStatsManager_StatReachMinValue__DelegateSignature_Statics::NewProp_statName,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_HStatsManager_StatReachMinValue__DelegateSignature_Statics::Function_MetaDataParams[] = {
+		{ "Comment", "//This delegate will be used to broadcast the stat reach max value type.\n" },
+		{ "ModuleRelativePath", "Public/HStatHandler.h" },
+		{ "ToolTip", "This delegate will be used to broadcast the stat reach max value type." },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_HStatsManager_StatReachMinValue__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UPackage__Script_HStatsManager, nullptr, "StatReachMinValue__DelegateSignature", nullptr, nullptr, sizeof(Z_Construct_UDelegateFunction_HStatsManager_StatReachMinValue__DelegateSignature_Statics::_Script_HStatsManager_eventStatReachMinValue_Parms), Z_Construct_UDelegateFunction_HStatsManager_StatReachMinValue__DelegateSignature_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_HStatsManager_StatReachMinValue__DelegateSignature_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(Z_Construct_UDelegateFunction_HStatsManager_StatReachMinValue__DelegateSignature_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_HStatsManager_StatReachMinValue__DelegateSignature_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UDelegateFunction_HStatsManager_StatReachMinValue__DelegateSignature()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UDelegateFunction_HStatsManager_StatReachMinValue__DelegateSignature_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+void FStatReachMinValue_DelegateWrapper(const FMulticastScriptDelegate& StatReachMinValue, const FString& statName)
+{
+	struct _Script_HStatsManager_eventStatReachMinValue_Parms
+	{
+		FString statName;
+	};
+	_Script_HStatsManager_eventStatReachMinValue_Parms Parms;
+	Parms.statName=statName;
+	StatReachMinValue.ProcessMulticastDelegate<UObject>(&Parms);
 }
 	DEFINE_FUNCTION(UHStatHandler::execIncreaseStatValue)
 	{
@@ -242,7 +325,7 @@ void FOnDamageResponse_DelegateWrapper(const FMulticastScriptDelegate& OnDamageR
 #endif
 		static const UECodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UHStatHandler_DamageTo_Statics::NewProp_aboutDamage = { "aboutDamage", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(HStatHandler_eventDamageTo_Parms, aboutDamage), Z_Construct_UScriptStruct_FS_DamageInfo, METADATA_PARAMS(nullptr, 0) }; // 45969162
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UHStatHandler_DamageTo_Statics::NewProp_aboutDamage = { "aboutDamage", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(HStatHandler_eventDamageTo_Parms, aboutDamage), Z_Construct_UScriptStruct_FS_DamageInfo, METADATA_PARAMS(nullptr, 0) }; // 3067287915
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UHStatHandler_DamageTo_Statics::NewProp_target = { "target", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(HStatHandler_eventDamageTo_Parms, target), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(nullptr, 0) };
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_UHStatHandler_DamageTo_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(HStatHandler_eventDamageTo_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UHStatHandler_DamageTo_Statics::PropPointers[] = {
@@ -424,6 +507,14 @@ void FOnDamageResponse_DelegateWrapper(const FMulticastScriptDelegate& OnDamageR
 #endif
 		static const UECodeGen_Private::FMulticastDelegatePropertyParams NewProp_OnDamageResponse;
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_OnStatReachMaxValue_MetaData[];
+#endif
+		static const UECodeGen_Private::FMulticastDelegatePropertyParams NewProp_OnStatReachMaxValue;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_OnStatReachMinValue_MetaData[];
+#endif
+		static const UECodeGen_Private::FMulticastDelegatePropertyParams NewProp_OnStatReachMinValue;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_currentHealth_MetaData[];
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_currentHealth;
@@ -431,6 +522,16 @@ void FOnDamageResponse_DelegateWrapper(const FMulticastScriptDelegate& OnDamageR
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_maxHealth_MetaData[];
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_maxHealth;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_CanTakeDamage_MetaData[];
+#endif
+		static void NewProp_CanTakeDamage_SetBit(void* Obj);
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_CanTakeDamage;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_CanHeal_MetaData[];
+#endif
+		static void NewProp_CanHeal_SetBit(void* Obj);
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_CanHeal;
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_statNameCurrentValue_ValueProp;
 		static const UECodeGen_Private::FStrPropertyParams NewProp_statNameCurrentValue_Key_KeyProp;
 #if WITH_METADATA
@@ -443,6 +544,18 @@ void FOnDamageResponse_DelegateWrapper(const FMulticastScriptDelegate& OnDamageR
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_statNameMaxValue_MetaData[];
 #endif
 		static const UECodeGen_Private::FMapPropertyParams NewProp_statNameMaxValue;
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_statNameCanDecrease_ValueProp;
+		static const UECodeGen_Private::FStrPropertyParams NewProp_statNameCanDecrease_Key_KeyProp;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_statNameCanDecrease_MetaData[];
+#endif
+		static const UECodeGen_Private::FMapPropertyParams NewProp_statNameCanDecrease;
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_statNameCanIncrease_ValueProp;
+		static const UECodeGen_Private::FStrPropertyParams NewProp_statNameCanIncrease_Key_KeyProp;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_statNameCanIncrease_MetaData[];
+#endif
+		static const UECodeGen_Private::FMapPropertyParams NewProp_statNameCanIncrease;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -453,7 +566,7 @@ void FOnDamageResponse_DelegateWrapper(const FMulticastScriptDelegate& OnDamageR
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UHStatHandler_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_UHStatHandler_CanDecreaseStatValue, "CanDecreaseStatValue" }, // 1838864031
-		{ &Z_Construct_UFunction_UHStatHandler_DamageTo, "DamageTo" }, // 2216717482
+		{ &Z_Construct_UFunction_UHStatHandler_DamageTo, "DamageTo" }, // 2669186824
 		{ &Z_Construct_UFunction_UHStatHandler_DecreaseStatValue, "DecreaseStatValue" }, // 2602970876
 		{ &Z_Construct_UFunction_UHStatHandler_HealTo, "HealTo" }, // 3411386269
 		{ &Z_Construct_UFunction_UHStatHandler_IncreaseStatValue, "IncreaseStatValue" }, // 2638194657
@@ -462,10 +575,10 @@ void FOnDamageResponse_DelegateWrapper(const FMulticastScriptDelegate& OnDamageR
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHStatHandler_Statics::Class_MetaDataParams[] = {
 		{ "BlueprintSpawnableComponent", "" },
 		{ "ClassGroupNames", "Custom" },
-		{ "Comment", "//This delegate will be used to broadcast the damage type.\n" },
+		{ "Comment", "//This delegate will be used to broadcast the stat reach min value type.\n" },
 		{ "IncludePath", "HStatHandler.h" },
 		{ "ModuleRelativePath", "Public/HStatHandler.h" },
-		{ "ToolTip", "This delegate will be used to broadcast the damage type." },
+		{ "ToolTip", "This delegate will be used to broadcast the stat reach min value type." },
 	};
 #endif
 #if WITH_METADATA
@@ -476,7 +589,7 @@ void FOnDamageResponse_DelegateWrapper(const FMulticastScriptDelegate& OnDamageR
 		{ "ToolTip", "This function will be used to increase the stat value and it will return the current value of the stat." },
 	};
 #endif
-	const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UHStatHandler_Statics::NewProp_OnDeath = { "OnDeath", nullptr, (EPropertyFlags)0x0010100010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UHStatHandler, OnDeath), Z_Construct_UDelegateFunction_HStatsManager_OnDeath__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_UHStatHandler_Statics::NewProp_OnDeath_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHStatHandler_Statics::NewProp_OnDeath_MetaData)) }; // 1242407409
+	const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UHStatHandler_Statics::NewProp_OnDeath = { "OnDeath", nullptr, (EPropertyFlags)0x0010100010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UHStatHandler, OnDeath), Z_Construct_UDelegateFunction_HStatsManager_OnDeath__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_UHStatHandler_Statics::NewProp_OnDeath_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHStatHandler_Statics::NewProp_OnDeath_MetaData)) }; // 2859121692
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHStatHandler_Statics::NewProp_OnDamageResponse_MetaData[] = {
 		{ "Category", "HStats" },
@@ -485,13 +598,31 @@ void FOnDamageResponse_DelegateWrapper(const FMulticastScriptDelegate& OnDamageR
 		{ "ToolTip", "This delegate will be used to broadcast the death type." },
 	};
 #endif
-	const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UHStatHandler_Statics::NewProp_OnDamageResponse = { "OnDamageResponse", nullptr, (EPropertyFlags)0x0010100010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UHStatHandler, OnDamageResponse), Z_Construct_UDelegateFunction_HStatsManager_OnDamageResponse__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_UHStatHandler_Statics::NewProp_OnDamageResponse_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHStatHandler_Statics::NewProp_OnDamageResponse_MetaData)) }; // 1776129704
+	const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UHStatHandler_Statics::NewProp_OnDamageResponse = { "OnDamageResponse", nullptr, (EPropertyFlags)0x0010100010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UHStatHandler, OnDamageResponse), Z_Construct_UDelegateFunction_HStatsManager_OnDamageResponse__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_UHStatHandler_Statics::NewProp_OnDamageResponse_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHStatHandler_Statics::NewProp_OnDamageResponse_MetaData)) }; // 1252529172
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHStatHandler_Statics::NewProp_currentHealth_MetaData[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHStatHandler_Statics::NewProp_OnStatReachMaxValue_MetaData[] = {
 		{ "Category", "HStats" },
 		{ "Comment", "//This delegate will be used to broadcast the damage type.\n" },
 		{ "ModuleRelativePath", "Public/HStatHandler.h" },
 		{ "ToolTip", "This delegate will be used to broadcast the damage type." },
+	};
+#endif
+	const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UHStatHandler_Statics::NewProp_OnStatReachMaxValue = { "OnStatReachMaxValue", nullptr, (EPropertyFlags)0x0010100010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UHStatHandler, OnStatReachMaxValue), Z_Construct_UDelegateFunction_HStatsManager_StatReachMaxValue__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_UHStatHandler_Statics::NewProp_OnStatReachMaxValue_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHStatHandler_Statics::NewProp_OnStatReachMaxValue_MetaData)) }; // 4192992576
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHStatHandler_Statics::NewProp_OnStatReachMinValue_MetaData[] = {
+		{ "Category", "HStats" },
+		{ "Comment", "//This delegate will be used to broadcast the stat reach max value type.\n" },
+		{ "ModuleRelativePath", "Public/HStatHandler.h" },
+		{ "ToolTip", "This delegate will be used to broadcast the stat reach max value type." },
+	};
+#endif
+	const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UHStatHandler_Statics::NewProp_OnStatReachMinValue = { "OnStatReachMinValue", nullptr, (EPropertyFlags)0x0010100010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UHStatHandler, OnStatReachMinValue), Z_Construct_UDelegateFunction_HStatsManager_StatReachMinValue__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_UHStatHandler_Statics::NewProp_OnStatReachMinValue_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHStatHandler_Statics::NewProp_OnStatReachMinValue_MetaData)) }; // 957803876
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHStatHandler_Statics::NewProp_currentHealth_MetaData[] = {
+		{ "Category", "HStats" },
+		{ "Comment", "//This delegate will be used to broadcast the stat reach min value type.\n" },
+		{ "ModuleRelativePath", "Public/HStatHandler.h" },
+		{ "ToolTip", "This delegate will be used to broadcast the stat reach min value type." },
 	};
 #endif
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UHStatHandler_Statics::NewProp_currentHealth = { "currentHealth", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UHStatHandler, currentHealth), METADATA_PARAMS(Z_Construct_UClass_UHStatHandler_Statics::NewProp_currentHealth_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHStatHandler_Statics::NewProp_currentHealth_MetaData)) };
@@ -504,14 +635,40 @@ void FOnDamageResponse_DelegateWrapper(const FMulticastScriptDelegate& OnDamageR
 	};
 #endif
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UHStatHandler_Statics::NewProp_maxHealth = { "maxHealth", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UHStatHandler, maxHealth), METADATA_PARAMS(Z_Construct_UClass_UHStatHandler_Statics::NewProp_maxHealth_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHStatHandler_Statics::NewProp_maxHealth_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHStatHandler_Statics::NewProp_CanTakeDamage_MetaData[] = {
+		{ "Category", "HStats" },
+		{ "Comment", "//This variable will be used to store the max health of the character.\n" },
+		{ "ModuleRelativePath", "Public/HStatHandler.h" },
+		{ "ToolTip", "This variable will be used to store the max health of the character." },
+	};
+#endif
+	void Z_Construct_UClass_UHStatHandler_Statics::NewProp_CanTakeDamage_SetBit(void* Obj)
+	{
+		((UHStatHandler*)Obj)->CanTakeDamage = 1;
+	}
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UHStatHandler_Statics::NewProp_CanTakeDamage = { "CanTakeDamage", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, sizeof(bool), sizeof(UHStatHandler), &Z_Construct_UClass_UHStatHandler_Statics::NewProp_CanTakeDamage_SetBit, METADATA_PARAMS(Z_Construct_UClass_UHStatHandler_Statics::NewProp_CanTakeDamage_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHStatHandler_Statics::NewProp_CanTakeDamage_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHStatHandler_Statics::NewProp_CanHeal_MetaData[] = {
+		{ "Category", "HStats" },
+		{ "Comment", "//This variable will be used to check if the character can take damage.\n" },
+		{ "ModuleRelativePath", "Public/HStatHandler.h" },
+		{ "ToolTip", "This variable will be used to check if the character can take damage." },
+	};
+#endif
+	void Z_Construct_UClass_UHStatHandler_Statics::NewProp_CanHeal_SetBit(void* Obj)
+	{
+		((UHStatHandler*)Obj)->CanHeal = 1;
+	}
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UHStatHandler_Statics::NewProp_CanHeal = { "CanHeal", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, sizeof(bool), sizeof(UHStatHandler), &Z_Construct_UClass_UHStatHandler_Statics::NewProp_CanHeal_SetBit, METADATA_PARAMS(Z_Construct_UClass_UHStatHandler_Statics::NewProp_CanHeal_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHStatHandler_Statics::NewProp_CanHeal_MetaData)) };
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UHStatHandler_Statics::NewProp_statNameCurrentValue_ValueProp = { "statNameCurrentValue", nullptr, (EPropertyFlags)0x0000000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 1, METADATA_PARAMS(nullptr, 0) };
 	const UECodeGen_Private::FStrPropertyParams Z_Construct_UClass_UHStatHandler_Statics::NewProp_statNameCurrentValue_Key_KeyProp = { "statNameCurrentValue_Key", nullptr, (EPropertyFlags)0x0000000000000001, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHStatHandler_Statics::NewProp_statNameCurrentValue_MetaData[] = {
 		{ "Category", "HStats" },
-		{ "Comment", "//This variable will be used to store the max health of the character.\n" },
+		{ "Comment", "//This variable will be used to check if the character can heal.\n" },
 		{ "ModuleRelativePath", "Public/HStatHandler.h" },
-		{ "ToolTip", "This variable will be used to store the max health of the character." },
+		{ "ToolTip", "This variable will be used to check if the character can heal." },
 	};
 #endif
 	const UECodeGen_Private::FMapPropertyParams Z_Construct_UClass_UHStatHandler_Statics::NewProp_statNameCurrentValue = { "statNameCurrentValue", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UHStatHandler, statNameCurrentValue), EMapPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_UHStatHandler_Statics::NewProp_statNameCurrentValue_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHStatHandler_Statics::NewProp_statNameCurrentValue_MetaData)) };
@@ -526,17 +683,49 @@ void FOnDamageResponse_DelegateWrapper(const FMulticastScriptDelegate& OnDamageR
 	};
 #endif
 	const UECodeGen_Private::FMapPropertyParams Z_Construct_UClass_UHStatHandler_Statics::NewProp_statNameMaxValue = { "statNameMaxValue", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UHStatHandler, statNameMaxValue), EMapPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_UHStatHandler_Statics::NewProp_statNameMaxValue_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHStatHandler_Statics::NewProp_statNameMaxValue_MetaData)) };
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UHStatHandler_Statics::NewProp_statNameCanDecrease_ValueProp = { "statNameCanDecrease", nullptr, (EPropertyFlags)0x0000000000000001, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, sizeof(bool), 0, nullptr, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FStrPropertyParams Z_Construct_UClass_UHStatHandler_Statics::NewProp_statNameCanDecrease_Key_KeyProp = { "statNameCanDecrease_Key", nullptr, (EPropertyFlags)0x0000000000000001, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHStatHandler_Statics::NewProp_statNameCanDecrease_MetaData[] = {
+		{ "Category", "HStats" },
+		{ "Comment", "//This map will be used to store the max value of the stats.\n" },
+		{ "ModuleRelativePath", "Public/HStatHandler.h" },
+		{ "ToolTip", "This map will be used to store the max value of the stats." },
+	};
+#endif
+	const UECodeGen_Private::FMapPropertyParams Z_Construct_UClass_UHStatHandler_Statics::NewProp_statNameCanDecrease = { "statNameCanDecrease", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UHStatHandler, statNameCanDecrease), EMapPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_UHStatHandler_Statics::NewProp_statNameCanDecrease_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHStatHandler_Statics::NewProp_statNameCanDecrease_MetaData)) };
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UHStatHandler_Statics::NewProp_statNameCanIncrease_ValueProp = { "statNameCanIncrease", nullptr, (EPropertyFlags)0x0000000000000001, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, sizeof(bool), 0, nullptr, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FStrPropertyParams Z_Construct_UClass_UHStatHandler_Statics::NewProp_statNameCanIncrease_Key_KeyProp = { "statNameCanIncrease_Key", nullptr, (EPropertyFlags)0x0000000000000001, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHStatHandler_Statics::NewProp_statNameCanIncrease_MetaData[] = {
+		{ "Category", "HStats" },
+		{ "Comment", "//This map will be used to check if the stat value can be decreased.\n" },
+		{ "ModuleRelativePath", "Public/HStatHandler.h" },
+		{ "ToolTip", "This map will be used to check if the stat value can be decreased." },
+	};
+#endif
+	const UECodeGen_Private::FMapPropertyParams Z_Construct_UClass_UHStatHandler_Statics::NewProp_statNameCanIncrease = { "statNameCanIncrease", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UHStatHandler, statNameCanIncrease), EMapPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_UHStatHandler_Statics::NewProp_statNameCanIncrease_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHStatHandler_Statics::NewProp_statNameCanIncrease_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UHStatHandler_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHStatHandler_Statics::NewProp_OnDeath,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHStatHandler_Statics::NewProp_OnDamageResponse,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHStatHandler_Statics::NewProp_OnStatReachMaxValue,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHStatHandler_Statics::NewProp_OnStatReachMinValue,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHStatHandler_Statics::NewProp_currentHealth,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHStatHandler_Statics::NewProp_maxHealth,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHStatHandler_Statics::NewProp_CanTakeDamage,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHStatHandler_Statics::NewProp_CanHeal,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHStatHandler_Statics::NewProp_statNameCurrentValue_ValueProp,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHStatHandler_Statics::NewProp_statNameCurrentValue_Key_KeyProp,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHStatHandler_Statics::NewProp_statNameCurrentValue,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHStatHandler_Statics::NewProp_statNameMaxValue_ValueProp,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHStatHandler_Statics::NewProp_statNameMaxValue_Key_KeyProp,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHStatHandler_Statics::NewProp_statNameMaxValue,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHStatHandler_Statics::NewProp_statNameCanDecrease_ValueProp,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHStatHandler_Statics::NewProp_statNameCanDecrease_Key_KeyProp,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHStatHandler_Statics::NewProp_statNameCanDecrease,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHStatHandler_Statics::NewProp_statNameCanIncrease_ValueProp,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHStatHandler_Statics::NewProp_statNameCanIncrease_Key_KeyProp,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHStatHandler_Statics::NewProp_statNameCanIncrease,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UHStatHandler_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<UHStatHandler>::IsAbstract,
@@ -571,15 +760,15 @@ void FOnDamageResponse_DelegateWrapper(const FMulticastScriptDelegate& OnDamageR
 	UHStatHandler::UHStatHandler(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UHStatHandler);
 	UHStatHandler::~UHStatHandler() {}
-	struct Z_CompiledInDeferFile_FID_Users_Haktan_Documents_Unreal_Projects_HStatSystemPlugin_Build_BuiltPlugins_HStatsManager_5_2_HostProject_Plugins_HStatsManager_Source_HStatsManager_Public_HStatHandler_h_Statics
+	struct Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HStatsManager_HostProject_Plugins_HStatsManager_Source_HStatsManager_Public_HStatHandler_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Documents_Unreal_Projects_HStatSystemPlugin_Build_BuiltPlugins_HStatsManager_5_2_HostProject_Plugins_HStatsManager_Source_HStatsManager_Public_HStatHandler_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UHStatHandler, UHStatHandler::StaticClass, TEXT("UHStatHandler"), &Z_Registration_Info_UClass_UHStatHandler, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UHStatHandler), 3856453100U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HStatsManager_HostProject_Plugins_HStatsManager_Source_HStatsManager_Public_HStatHandler_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_UHStatHandler, UHStatHandler::StaticClass, TEXT("UHStatHandler"), &Z_Registration_Info_UClass_UHStatHandler, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UHStatHandler), 2732230009U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Documents_Unreal_Projects_HStatSystemPlugin_Build_BuiltPlugins_HStatsManager_5_2_HostProject_Plugins_HStatsManager_Source_HStatsManager_Public_HStatHandler_h_3650154072(TEXT("/Script/HStatsManager"),
-		Z_CompiledInDeferFile_FID_Users_Haktan_Documents_Unreal_Projects_HStatSystemPlugin_Build_BuiltPlugins_HStatsManager_5_2_HostProject_Plugins_HStatsManager_Source_HStatsManager_Public_HStatHandler_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Haktan_Documents_Unreal_Projects_HStatSystemPlugin_Build_BuiltPlugins_HStatsManager_5_2_HostProject_Plugins_HStatsManager_Source_HStatsManager_Public_HStatHandler_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HStatsManager_HostProject_Plugins_HStatsManager_Source_HStatsManager_Public_HStatHandler_h_1104055071(TEXT("/Script/HStatsManager"),
+		Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HStatsManager_HostProject_Plugins_HStatsManager_Source_HStatsManager_Public_HStatHandler_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HStatsManager_HostProject_Plugins_HStatsManager_Source_HStatsManager_Public_HStatHandler_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

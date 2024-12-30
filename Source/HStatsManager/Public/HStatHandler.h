@@ -8,8 +8,10 @@
 #include "Components/ActorComponent.h"
 #include "HStatHandler.generated.h"
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnDeath, E_DeathType, DeathType);//This delegate will be used to broadcast the death type.
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnDamageResponse, E_DamageType, DamageType);//This delegate will be used to broadcast the damage type.
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnDeath, UAnimMontage*, DeathAnimation);//This delegate will be used to broadcast the death type.
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnDamageResponse, UAnimMontage*, DamageAnimation);//This delegate will be used to broadcast the damage type.
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FStatReachMaxValue, FString, statName);//This delegate will be used to broadcast the stat reach max value type.
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FStatReachMinValue, FString, statName);//This delegate will be used to broadcast the stat reach min value type.
 
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
@@ -45,15 +47,27 @@ public:
 	FOnDeath OnDeath;//This delegate will be used to broadcast the death type.
 	UPROPERTY(BlueprintAssignable, BlueprintCallable, Category = "HStats")
 	FOnDamageResponse OnDamageResponse;//This delegate will be used to broadcast the damage type.
+	UPROPERTY(BlueprintAssignable, BlueprintCallable, Category = "HStats")
+	FStatReachMaxValue OnStatReachMaxValue;//This delegate will be used to broadcast the stat reach max value type.
+	UPROPERTY(BlueprintAssignable, BlueprintCallable, Category = "HStats")
+	FStatReachMinValue OnStatReachMinValue;//This delegate will be used to broadcast the stat reach min value type.
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HStats")
 	float currentHealth;//This variable will be used to store the current health of the character.
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HStats")
 	float maxHealth;//This variable will be used to store the max health of the character.
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HStats")
+	bool CanTakeDamage = true;//This variable will be used to check if the character can take damage.
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HStats")
+	bool CanHeal = true;//This variable will be used to check if the character can heal.
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HStats")
 	TMap<FString, float> statNameCurrentValue;//This map will be used to store the current value of the stats.
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HStats")
 	TMap<FString, float> statNameMaxValue;//This map will be used to store the max value of the stats.
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HStats")
+	TMap<FString, bool> statNameCanDecrease;//This map will be used to check if the stat value can be decreased.
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HStats")
+	TMap<FString, bool> statNameCanIncrease;//This map will be used to check if the stat value can be increased.
 	
 };

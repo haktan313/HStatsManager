@@ -12,11 +12,11 @@ float UHStatHandler::TakeDamage(FS_DamageInfo aboutDamage)
 	if(currentHealth <= 0)//If the health is less than or equal to 0, then broadcast the death type.
 	{
 		currentHealth = 0;
-		OnDeath.Broadcast(aboutDamage.DeathType);
+		OnDeath.Broadcast(aboutDamage.DeathReactionAnimation);
 	}
 	else
 	{
-		OnDamageResponse.Broadcast(aboutDamage.DamageType);
+		OnDamageResponse.Broadcast(aboutDamage.DamageReactionAnimation);
 	}
 	return currentHealth;
 }
@@ -43,6 +43,7 @@ float UHStatHandler::DecreaseStat(FString& statName, float amount)
 		currentValue -= amount;
 		if(currentValue <= 0)
 		{
+			OnStatReachMinValue.Broadcast(statName);//If the stat value is less than or equal to 0, then broadcast the stat reach min value type.
 			currentValue = 0;
 		}
 		return currentValue;
@@ -76,6 +77,7 @@ float UHStatHandler::IncreaseStat(FString& statName, float amount)
 		currentValue = FMath::Clamp(currentValue, 0.f, maxValue);//Clamp the stat value between 0 and max value.
 		if(currentValue >= maxValue)
 		{
+			OnStatReachMaxValue.Broadcast(statName);//If the stat value is greater than or equal to max value, then broadcast the stat reach max value type.
 			currentValue = maxValue;
 		}
 		return currentValue;
@@ -91,7 +93,11 @@ float UHStatHandler::DamageTo(FS_DamageInfo aboutDamage, AActor* target)
 	UHStatHandler* statHandler = Cast<UHStatHandler>(target->GetComponentByClass(UHStatHandler::StaticClass()));//Get the StatHandler component of the target.
 	if(statHandler)
 	{
-		return statHandler->TakeDamage(aboutDamage);//Take damage to the target.
+		if (statHandler->CanTakeDamage)//Check if the target can take damage.
+		{
+			return statHandler->TakeDamage(aboutDamage);//Take damage to the target.
+		}
+		return 0;
 	}
 	return 0;
 }
@@ -102,7 +108,11 @@ float UHStatHandler::HealTo(float amount, AActor* target)
 	UHStatHandler* statHandler = Cast<UHStatHandler>(target->GetComponentByClass(UHStatHandler::StaticClass()));//Get the StatHandler component of the target.
 	if(statHandler)
 	{
-		return statHandler->Heal(amount);//Heal the target.
+		if (statHandler->CanHeal)//Check if the target can heal.
+		{
+			return statHandler->Heal(amount);//Heal the target.
+		}
+		return 0;
 	}
 	return 0;
 }
@@ -113,6 +123,14 @@ float UHStatHandler::DecreaseStatValue(FString statName, float amount, AActor* t
 	UHStatHandler* statHandler = Cast<UHStatHandler>(target->GetComponentByClass(UHStatHandler::StaticClass()));//Get the StatHandler component of the target.
 	if(statHandler)
 	{
+		if (statHandler->statNameCanDecrease.Contains(statName))//Check if the stat value can be decreased of the target.
+		{
+			if (statHandler->statNameCanDecrease[statName])
+			{
+				return statHandler->DecreaseStat(statName, amount);//Decrease the stat value of the target.
+			}
+			return 0;
+		}
 		return statHandler->DecreaseStat(statName, amount);//Decrease the stat value of the target.
 	}
 	return 0;
@@ -136,7 +154,15 @@ float UHStatHandler::IncreaseStatValue(FString statName, float amount, AActor* t
 	UHStatHandler* statHandler = Cast<UHStatHandler>(target->GetComponentByClass(UHStatHandler::StaticClass()));//Get the StatHandler component of the target.
 	if(statHandler)
 	{
-		return statHandler->IncreaseStat(statName, amount);//Increase the stat value of the target.
+		if (statHandler->statNameCanIncrease.Contains(statName))//Check if the stat value can be increased of the target.
+		{
+			if (statHandler->statNameCanIncrease[statName])
+			{
+				return statHandler->IncreaseStat(statName, amount);//Increase the stat value of the target.
+			}
+			return 0;
+		}
+		return statHandler->IncreaseStat(statName, amount);//Increase the stat value of the target
 	}
 	return 0;
 }
