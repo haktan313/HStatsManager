@@ -87,7 +87,7 @@ The HStatHandler Component is the core system for managing character stats in th
    - **StatNameCurrentValue**: A map storing the current values of custom stats identified by their names.
    - **StatNameMaxValue**: A map storing the maximum values of custom stats identified by their names. 
    
-   ![hstatvaraibles](https://github.com/user-attachments/assets/71474f37-d905-4aa8-bf99-7f0f12d9e219)
+   ![Screenshot 2024-12-30 120013](https://github.com/user-attachments/assets/28e0a19b-4fc7-46ee-99c3-d5967f41077c)
 
 ### HWidget_BaseStat
 
