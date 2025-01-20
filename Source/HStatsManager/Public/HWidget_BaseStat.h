@@ -16,16 +16,15 @@ class HSTATSMANAGER_API UHWidget_BaseStat : public UUserWidget
 	GENERATED_BODY()
 
 public:
-
-	//This is the StatHandler object that will be used to get the stats of the character.
+	
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Stats", meta = (ExposeOnSpawn = true))
-	UHStatHandler* StatHandlerObject;
+	TMap<FString, UHStatHandler*> StatHandlerObjects;
 
-	//This function will return the percentage of the stat.
+//This function will return the percentage of the stat.
 	UFUNCTION(BlueprintCallable, Category = "Stats")
-	float GetPercentageOfStat(FString statName);
+	float GetPercentageOfStatFromStatHandlerObject(FString WhoseStatHandler,FString statName);
 
 	//This function will return the percentage of the health.
 	UFUNCTION(BlueprintCallable, Category = "Stats")
-	float GetHealthPercentage() const;
+	float GetHealthPercentageFromStatHandler(FString WhoseStatHandler);
 };

@@ -4,26 +4,33 @@
 #include "HWidget_BaseStat.h"
 
 //This function will return the percentage of the stat.
-float UHWidget_BaseStat::GetPercentageOfStat(FString statName)
+float UHWidget_BaseStat::GetPercentageOfStatFromStatHandlerObject(FString WhoseStatHandler,FString statName)
 {
-	if(StatHandlerObject->statNameCurrentValue.Contains(statName) && StatHandlerObject->statNameMaxValue.Contains(statName))
+	UHStatHandler* statHandler = StatHandlerObjects.FindRef(WhoseStatHandler);//With this will get the stat handler object from the map.
+	if (statHandler)
 	{
-		float currentValue = StatHandlerObject->statNameCurrentValue[statName];
-		float maxValue = StatHandlerObject->statNameMaxValue[statName];
-		return currentValue / maxValue;
+		if(statHandler->statNameCurrentValue.Contains(statName) && statHandler->statNameMaxValue.Contains(statName))
+		{
+			float currentValue = statHandler->statNameCurrentValue[statName];
+			float maxValue = statHandler->statNameMaxValue[statName];
+			return currentValue / maxValue;
+		}
 	}
 	return 0.f;
 }
 
 //This function will return the percentage of the health.
-float UHWidget_BaseStat::GetHealthPercentage() const
+float UHWidget_BaseStat::GetHealthPercentageFromStatHandler(FString WhoseStatHandler)
 {
-	if(StatHandlerObject)
+	UHStatHandler* statHandler = StatHandlerObjects.FindRef(WhoseStatHandler);//With this will get the stat handler object from the map.
+	if (statHandler)
 	{
-		float currentHealth = StatHandlerObject->currentHealth;
-		float maxHealth = StatHandlerObject->maxHealth;
-		return currentHealth / maxHealth;
+		if(statHandler)
+		{
+			float currentHealth = statHandler->currentHealth;
+			float maxHealth = statHandler->maxHealth;
+			return currentHealth / maxHealth;
+		}
 	}
 	return 0.f;
 }
-

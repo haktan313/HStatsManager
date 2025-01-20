@@ -15,36 +15,40 @@ void EmptyLinkFunctionForGeneratedCodeHWidget_BaseStat() {}
 	UMG_API UClass* Z_Construct_UClass_UUserWidget();
 	UPackage* Z_Construct_UPackage__Script_HStatsManager();
 // End Cross Module References
-	DEFINE_FUNCTION(UHWidget_BaseStat::execGetHealthPercentage)
+	DEFINE_FUNCTION(UHWidget_BaseStat::execGetHealthPercentageFromStatHandler)
 	{
+		P_GET_PROPERTY(FStrProperty,Z_Param_WhoseStatHandler);
 		P_FINISH;
 		P_NATIVE_BEGIN;
-		*(float*)Z_Param__Result=P_THIS->GetHealthPercentage();
+		*(float*)Z_Param__Result=P_THIS->GetHealthPercentageFromStatHandler(Z_Param_WhoseStatHandler);
 		P_NATIVE_END;
 	}
-	DEFINE_FUNCTION(UHWidget_BaseStat::execGetPercentageOfStat)
+	DEFINE_FUNCTION(UHWidget_BaseStat::execGetPercentageOfStatFromStatHandlerObject)
 	{
+		P_GET_PROPERTY(FStrProperty,Z_Param_WhoseStatHandler);
 		P_GET_PROPERTY(FStrProperty,Z_Param_statName);
 		P_FINISH;
 		P_NATIVE_BEGIN;
-		*(float*)Z_Param__Result=P_THIS->GetPercentageOfStat(Z_Param_statName);
+		*(float*)Z_Param__Result=P_THIS->GetPercentageOfStatFromStatHandlerObject(Z_Param_WhoseStatHandler,Z_Param_statName);
 		P_NATIVE_END;
 	}
 	void UHWidget_BaseStat::StaticRegisterNativesUHWidget_BaseStat()
 	{
 		UClass* Class = UHWidget_BaseStat::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
-			{ "GetHealthPercentage", &UHWidget_BaseStat::execGetHealthPercentage },
-			{ "GetPercentageOfStat", &UHWidget_BaseStat::execGetPercentageOfStat },
+			{ "GetHealthPercentageFromStatHandler", &UHWidget_BaseStat::execGetHealthPercentageFromStatHandler },
+			{ "GetPercentageOfStatFromStatHandlerObject", &UHWidget_BaseStat::execGetPercentageOfStatFromStatHandlerObject },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 	}
-	struct Z_Construct_UFunction_UHWidget_BaseStat_GetHealthPercentage_Statics
+	struct Z_Construct_UFunction_UHWidget_BaseStat_GetHealthPercentageFromStatHandler_Statics
 	{
-		struct HWidget_BaseStat_eventGetHealthPercentage_Parms
+		struct HWidget_BaseStat_eventGetHealthPercentageFromStatHandler_Parms
 		{
+			FString WhoseStatHandler;
 			float ReturnValue;
 		};
+		static const UECodeGen_Private::FStrPropertyParams NewProp_WhoseStatHandler;
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_ReturnValue;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
@@ -52,35 +56,39 @@ void EmptyLinkFunctionForGeneratedCodeHWidget_BaseStat() {}
 #endif
 		static const UECodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_UHWidget_BaseStat_GetHealthPercentage_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(HWidget_BaseStat_eventGetHealthPercentage_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
-	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UHWidget_BaseStat_GetHealthPercentage_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UHWidget_BaseStat_GetHealthPercentage_Statics::NewProp_ReturnValue,
+	const UECodeGen_Private::FStrPropertyParams Z_Construct_UFunction_UHWidget_BaseStat_GetHealthPercentageFromStatHandler_Statics::NewProp_WhoseStatHandler = { "WhoseStatHandler", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(HWidget_BaseStat_eventGetHealthPercentageFromStatHandler_Parms, WhoseStatHandler), METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_UHWidget_BaseStat_GetHealthPercentageFromStatHandler_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(HWidget_BaseStat_eventGetHealthPercentageFromStatHandler_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UHWidget_BaseStat_GetHealthPercentageFromStatHandler_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UHWidget_BaseStat_GetHealthPercentageFromStatHandler_Statics::NewProp_WhoseStatHandler,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UHWidget_BaseStat_GetHealthPercentageFromStatHandler_Statics::NewProp_ReturnValue,
 	};
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UHWidget_BaseStat_GetHealthPercentage_Statics::Function_MetaDataParams[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UHWidget_BaseStat_GetHealthPercentageFromStatHandler_Statics::Function_MetaDataParams[] = {
 		{ "Category", "Stats" },
 		{ "Comment", "//This function will return the percentage of the health.\n" },
 		{ "ModuleRelativePath", "Public/HWidget_BaseStat.h" },
 		{ "ToolTip", "This function will return the percentage of the health." },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UHWidget_BaseStat_GetHealthPercentage_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UHWidget_BaseStat, nullptr, "GetHealthPercentage", nullptr, nullptr, sizeof(Z_Construct_UFunction_UHWidget_BaseStat_GetHealthPercentage_Statics::HWidget_BaseStat_eventGetHealthPercentage_Parms), Z_Construct_UFunction_UHWidget_BaseStat_GetHealthPercentage_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UHWidget_BaseStat_GetHealthPercentage_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UHWidget_BaseStat_GetHealthPercentage_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UHWidget_BaseStat_GetHealthPercentage_Statics::Function_MetaDataParams)) };
-	UFunction* Z_Construct_UFunction_UHWidget_BaseStat_GetHealthPercentage()
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UHWidget_BaseStat_GetHealthPercentageFromStatHandler_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UHWidget_BaseStat, nullptr, "GetHealthPercentageFromStatHandler", nullptr, nullptr, sizeof(Z_Construct_UFunction_UHWidget_BaseStat_GetHealthPercentageFromStatHandler_Statics::HWidget_BaseStat_eventGetHealthPercentageFromStatHandler_Parms), Z_Construct_UFunction_UHWidget_BaseStat_GetHealthPercentageFromStatHandler_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UHWidget_BaseStat_GetHealthPercentageFromStatHandler_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UHWidget_BaseStat_GetHealthPercentageFromStatHandler_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UHWidget_BaseStat_GetHealthPercentageFromStatHandler_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UHWidget_BaseStat_GetHealthPercentageFromStatHandler()
 	{
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UHWidget_BaseStat_GetHealthPercentage_Statics::FuncParams);
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UHWidget_BaseStat_GetHealthPercentageFromStatHandler_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
-	struct Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStat_Statics
+	struct Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStatFromStatHandlerObject_Statics
 	{
-		struct HWidget_BaseStat_eventGetPercentageOfStat_Parms
+		struct HWidget_BaseStat_eventGetPercentageOfStatFromStatHandlerObject_Parms
 		{
+			FString WhoseStatHandler;
 			FString statName;
 			float ReturnValue;
 		};
+		static const UECodeGen_Private::FStrPropertyParams NewProp_WhoseStatHandler;
 		static const UECodeGen_Private::FStrPropertyParams NewProp_statName;
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_ReturnValue;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
@@ -89,27 +97,29 @@ void EmptyLinkFunctionForGeneratedCodeHWidget_BaseStat() {}
 #endif
 		static const UECodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UECodeGen_Private::FStrPropertyParams Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStat_Statics::NewProp_statName = { "statName", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(HWidget_BaseStat_eventGetPercentageOfStat_Parms, statName), METADATA_PARAMS(nullptr, 0) };
-	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStat_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(HWidget_BaseStat_eventGetPercentageOfStat_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
-	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStat_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStat_Statics::NewProp_statName,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStat_Statics::NewProp_ReturnValue,
+	const UECodeGen_Private::FStrPropertyParams Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStatFromStatHandlerObject_Statics::NewProp_WhoseStatHandler = { "WhoseStatHandler", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(HWidget_BaseStat_eventGetPercentageOfStatFromStatHandlerObject_Parms, WhoseStatHandler), METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FStrPropertyParams Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStatFromStatHandlerObject_Statics::NewProp_statName = { "statName", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(HWidget_BaseStat_eventGetPercentageOfStatFromStatHandlerObject_Parms, statName), METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStatFromStatHandlerObject_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(HWidget_BaseStat_eventGetPercentageOfStatFromStatHandlerObject_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStatFromStatHandlerObject_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStatFromStatHandlerObject_Statics::NewProp_WhoseStatHandler,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStatFromStatHandlerObject_Statics::NewProp_statName,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStatFromStatHandlerObject_Statics::NewProp_ReturnValue,
 	};
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStat_Statics::Function_MetaDataParams[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStatFromStatHandlerObject_Statics::Function_MetaDataParams[] = {
 		{ "Category", "Stats" },
 		{ "Comment", "//This function will return the percentage of the stat.\n" },
 		{ "ModuleRelativePath", "Public/HWidget_BaseStat.h" },
 		{ "ToolTip", "This function will return the percentage of the stat." },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStat_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UHWidget_BaseStat, nullptr, "GetPercentageOfStat", nullptr, nullptr, sizeof(Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStat_Statics::HWidget_BaseStat_eventGetPercentageOfStat_Parms), Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStat_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStat_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStat_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStat_Statics::Function_MetaDataParams)) };
-	UFunction* Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStat()
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStatFromStatHandlerObject_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UHWidget_BaseStat, nullptr, "GetPercentageOfStatFromStatHandlerObject", nullptr, nullptr, sizeof(Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStatFromStatHandlerObject_Statics::HWidget_BaseStat_eventGetPercentageOfStatFromStatHandlerObject_Parms), Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStatFromStatHandlerObject_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStatFromStatHandlerObject_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStatFromStatHandlerObject_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStatFromStatHandlerObject_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStatFromStatHandlerObject()
 	{
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStat_Statics::FuncParams);
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStatFromStatHandlerObject_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -125,10 +135,12 @@ void EmptyLinkFunctionForGeneratedCodeHWidget_BaseStat() {}
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_StatHandlerObjects_ValueProp;
+		static const UECodeGen_Private::FStrPropertyParams NewProp_StatHandlerObjects_Key_KeyProp;
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_StatHandlerObject_MetaData[];
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_StatHandlerObjects_MetaData[];
 #endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_StatHandlerObject;
+		static const UECodeGen_Private::FMapPropertyParams NewProp_StatHandlerObjects;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -138,8 +150,8 @@ void EmptyLinkFunctionForGeneratedCodeHWidget_BaseStat() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_HStatsManager,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UHWidget_BaseStat_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_UHWidget_BaseStat_GetHealthPercentage, "GetHealthPercentage" }, // 4224503250
-		{ &Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStat, "GetPercentageOfStat" }, // 3247158138
+		{ &Z_Construct_UFunction_UHWidget_BaseStat_GetHealthPercentageFromStatHandler, "GetHealthPercentageFromStatHandler" }, // 3885826434
+		{ &Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStatFromStatHandlerObject, "GetPercentageOfStatFromStatHandlerObject" }, // 3110225445
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHWidget_BaseStat_Statics::Class_MetaDataParams[] = {
@@ -147,19 +159,21 @@ void EmptyLinkFunctionForGeneratedCodeHWidget_BaseStat() {}
 		{ "ModuleRelativePath", "Public/HWidget_BaseStat.h" },
 	};
 #endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UHWidget_BaseStat_Statics::NewProp_StatHandlerObjects_ValueProp = { "StatHandlerObjects", nullptr, (EPropertyFlags)0x0000000000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 1, Z_Construct_UClass_UHStatHandler_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FStrPropertyParams Z_Construct_UClass_UHWidget_BaseStat_Statics::NewProp_StatHandlerObjects_Key_KeyProp = { "StatHandlerObjects_Key", nullptr, (EPropertyFlags)0x0000000000080009, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHWidget_BaseStat_Statics::NewProp_StatHandlerObject_MetaData[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHWidget_BaseStat_Statics::NewProp_StatHandlerObjects_MetaData[] = {
 		{ "Category", "Stats" },
-		{ "Comment", "//This is the StatHandler object that will be used to get the stats of the character.\n" },
 		{ "EditInline", "true" },
 		{ "ExposeOnSpawn", "TRUE" },
 		{ "ModuleRelativePath", "Public/HWidget_BaseStat.h" },
-		{ "ToolTip", "This is the StatHandler object that will be used to get the stats of the character." },
 	};
 #endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UHWidget_BaseStat_Statics::NewProp_StatHandlerObject = { "StatHandlerObject", nullptr, (EPropertyFlags)0x001100000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UHWidget_BaseStat, StatHandlerObject), Z_Construct_UClass_UHStatHandler_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UHWidget_BaseStat_Statics::NewProp_StatHandlerObject_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHWidget_BaseStat_Statics::NewProp_StatHandlerObject_MetaData)) };
+	const UECodeGen_Private::FMapPropertyParams Z_Construct_UClass_UHWidget_BaseStat_Statics::NewProp_StatHandlerObjects = { "StatHandlerObjects", nullptr, (EPropertyFlags)0x001100800000000d, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UHWidget_BaseStat, StatHandlerObjects), EMapPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_UHWidget_BaseStat_Statics::NewProp_StatHandlerObjects_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHWidget_BaseStat_Statics::NewProp_StatHandlerObjects_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UHWidget_BaseStat_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHWidget_BaseStat_Statics::NewProp_StatHandlerObject,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHWidget_BaseStat_Statics::NewProp_StatHandlerObjects_ValueProp,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHWidget_BaseStat_Statics::NewProp_StatHandlerObjects_Key_KeyProp,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHWidget_BaseStat_Statics::NewProp_StatHandlerObjects,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UHWidget_BaseStat_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<UHWidget_BaseStat>::IsAbstract,
@@ -194,15 +208,15 @@ void EmptyLinkFunctionForGeneratedCodeHWidget_BaseStat() {}
 	UHWidget_BaseStat::UHWidget_BaseStat(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UHWidget_BaseStat);
 	UHWidget_BaseStat::~UHWidget_BaseStat() {}
-	struct Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HStatsManager_HostProject_Plugins_HStatsManager_Source_HStatsManager_Public_HWidget_BaseStat_h_Statics
+	struct Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HStatsManager_HostProject_Plugins_HStatsManager_Source_HStatsManager_Public_HWidget_BaseStat_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HStatsManager_HostProject_Plugins_HStatsManager_Source_HStatsManager_Public_HWidget_BaseStat_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UHWidget_BaseStat, UHWidget_BaseStat::StaticClass, TEXT("UHWidget_BaseStat"), &Z_Registration_Info_UClass_UHWidget_BaseStat, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UHWidget_BaseStat), 1944354846U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HStatsManager_HostProject_Plugins_HStatsManager_Source_HStatsManager_Public_HWidget_BaseStat_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_UHWidget_BaseStat, UHWidget_BaseStat::StaticClass, TEXT("UHWidget_BaseStat"), &Z_Registration_Info_UClass_UHWidget_BaseStat, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UHWidget_BaseStat), 1575521015U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HStatsManager_HostProject_Plugins_HStatsManager_Source_HStatsManager_Public_HWidget_BaseStat_h_2038657584(TEXT("/Script/HStatsManager"),
-		Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HStatsManager_HostProject_Plugins_HStatsManager_Source_HStatsManager_Public_HWidget_BaseStat_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HStatsManager_HostProject_Plugins_HStatsManager_Source_HStatsManager_Public_HWidget_BaseStat_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HStatsManager_HostProject_Plugins_HStatsManager_Source_HStatsManager_Public_HWidget_BaseStat_h_3073341008(TEXT("/Script/HStatsManager"),
+		Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HStatsManager_HostProject_Plugins_HStatsManager_Source_HStatsManager_Public_HWidget_BaseStat_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HStatsManager_HostProject_Plugins_HStatsManager_Source_HStatsManager_Public_HWidget_BaseStat_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
