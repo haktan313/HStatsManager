@@ -76,8 +76,8 @@ The HStatHandler Component is the core system for managing character stats in th
 
    - **DamageTo**: Applies damage to a target actor based on a specified type and amount, triggering OnDamageResponse and, if health reaches zero, OnDeath.
    - **HealTo**: Heal a specified amount of health to a target actor, clamped by the maximum health value.
-   - **OnDeath**: A dispatcher event that triggers when a character dies, providing the death type for custom reactions.
-   - **OnDamageResponse**: A dispatcher event that triggers when the character takes damage, providing the damage type for real-time effects.
+   - **OnDeath**: A dispatcher event that triggers when a character dies, providing the reaction animation from DamageTo function.
+   - **OnDamageResponse**: A dispatcher event that triggers when the character takes damage, providing the reaction animation from DamageTo function.
    - **CanDecreaseStatValue**: Checks if a specified stat on a target actor, identified by the entered StatName, can be reduced by a given amount.
    - **DecreaseStatValue**: Reduces the value of the stat identified by the entered StatName on the target actor by the specified amount. Both Current and Max values for the stat must already be set in the target's HStatHandler.
    - **IncreaseStatValue**: Increases the value of the stat identified by the entered StatName on the target actor by the specified amount. Both Current and Max values for the stat must already be set in the target's HStatHandler.
