@@ -41,7 +41,7 @@ This plugin is compatible with Unreal Engine 5.2 and is designed to work in both
         On Damage Taken: Trigger responses when the character takes damage.
         On Death: Automatically handle character death events with customizable functionality.
 
-- **Custom Stat Creation**: Beyond the predefined health stat, you can create unlimited custom stats tailored to your game's needs, such as stamina, mana, or other unique stats.
+- **Custom Stat Creation**: Beyond the predefined health stat, you can create unlimited custom statistics according to the needs of your game, such as stamina, mana, or other unique stats.
 
 - **BaseStat Widget Integration**:
 
