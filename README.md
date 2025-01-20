@@ -105,7 +105,7 @@ The HStatHandler Component is the core system for managing character stats in th
 ![widgetcreate](https://github.com/user-attachments/assets/b2d95793-b51d-4126-8c08-b5471390076d)
 
   - ### Health Binding:
-    The widget comes with a predefined binding, GetHealthPercentage, which calculates the percentage of health directly from the StatHandlerObject and applies it to a progress bar in the UI.
+    The widget has 2 functions to use on ‘Create Binding’. GetHealthPercantegeFromStatHandler and GetPercentageOfStatFromStatHandlerObject. For health, just enter the name of the stathandler component you want. For custom stats, just enter the stathandler component you want to use and which custom stat you want
     
     ![Image](https://github.com/user-attachments/assets/8f3af4aa-4f40-445e-ad43-2dc4d9e4797e)
     ![Image](https://github.com/user-attachments/assets/8ff383df-4342-42de-8691-41e50fce0cf7)
