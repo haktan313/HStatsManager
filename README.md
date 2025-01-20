@@ -106,6 +106,7 @@ The HStatHandler Component is the core system for managing character stats in th
 
   - ### Health Binding:
     The widget comes with a predefined binding, GetHealthPercentage, which calculates the percentage of health directly from the StatHandlerObject and applies it to a progress bar in the UI.
+    
     ![Image](https://github.com/user-attachments/assets/8f3af4aa-4f40-445e-ad43-2dc4d9e4797e)
     ![Image](https://github.com/user-attachments/assets/8ff383df-4342-42de-8691-41e50fce0cf7)
   ![Image](https://github.com/user-attachments/assets/bf79c121-12f3-44fd-b6b2-ec992c338893)
