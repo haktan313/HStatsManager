@@ -68,10 +68,11 @@ The HStatHandler Component is the core system for managing character stats in th
   - **Stat Operations**: Includes functions for increasing, decreasing, and clamping stat values within their defined ranges.
  
  - ### Functions & Events:
-   ![Image](https://github.com/user-attachments/assets/41bf9c2b-de73-4c44-8154-7bde570c291f)    ![Screenshot 2024-12-30 115937](https://github.com/user-attachments/assets/b3ff17f6-1d0c-4a62-96a7-f816dadefa0f)
-   ![ondeath and ondamage](https://github.com/user-attachments/assets/e2e0cbe1-b061-4335-9e1f-50ff15cf25b2)
-   ![constructure and functions c++](https://github.com/user-attachments/assets/c55445db-838a-4dea-a784-03d4a126e918)
-   ![death and damage c++](https://github.com/user-attachments/assets/42811925-b7ec-4893-a6f5-c18aa022a5ab)
+   ![Image](https://github.com/user-attachments/assets/41bf9c2b-de73-4c44-8154-7bde570c291f)    
+  ![Image](https://github.com/user-attachments/assets/3e5d5fe2-d18b-4239-9233-540560db7fc1)
+  ![Image](https://github.com/user-attachments/assets/968fcf12-286a-4803-801c-b8fc048471fa)
+  ![Image](https://github.com/user-attachments/assets/71f9b03d-1e5f-48fa-999a-34bc0f6a5021)
+  ![Image](https://github.com/user-attachments/assets/8de8a482-0df7-45d6-81a6-0fed3db79803)
 
    - **DamageTo**: Applies damage to a target actor based on a specified type and amount, triggering OnDamageResponse and, if health reaches zero, OnDeath.
    - **HealTo**: Heal a specified amount of health to a target actor, clamped by the maximum health value.
