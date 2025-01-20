@@ -106,11 +106,12 @@ The HStatHandler Component is the core system for managing character stats in th
 
   - ### Health Binding:
     The widget comes with a predefined binding, GetHealthPercentage, which calculates the percentage of health directly from the StatHandlerObject and applies it to a progress bar in the UI.
-    ![bind](https://github.com/user-attachments/assets/ec3a6d56-1bcf-418f-b998-3c80e9c154d9)
+    ![Image](https://github.com/user-attachments/assets/8ff383df-4342-42de-8691-41e50fce0cf7)
+  ![Image](https://github.com/user-attachments/assets/bf79c121-12f3-44fd-b6b2-ec992c338893)
 
   - ### Custom Stat Binding:
     For custom stats, the widget provides the GetPercentageOfStat function. Simply input the stat's name into the function (e.g., "Stamina" or "Mana"), and it will return the stat's percentage value, which you can bind to UI elements like progress bars.
-    ![bindExample](https://github.com/user-attachments/assets/cd1a49bc-4e14-4a0e-8e3c-ff17039b68be)
+    ![Image](https://github.com/user-attachments/assets/b46ddf3a-3a5a-4f3d-8634-ddcdac770d5c)
 
   - ### Widget Integration:
 
@@ -119,7 +120,7 @@ The HStatHandler Component is the core system for managing character stats in th
     - **Step 1**: Add the widget to your UI using CreateWidget.
     - **Step 2**: Assign the StatHandlerObject property of the widget to reference the HStatHandler component on your character. This connection allows the widget to pull real-time data from the character's stats.
       
-    ![functions - copia](https://github.com/user-attachments/assets/0c1d237b-2a6b-42da-880a-0e9e508ee929)
+  ![Image](https://github.com/user-attachments/assets/b3082161-f24f-43ea-8080-71f80875f8a8)
 
 ## Tutorial Video
 [HStatsManager Plugin Tutorial](https://youtu.be/IpXztwQfopE)
