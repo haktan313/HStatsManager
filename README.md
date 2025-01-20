@@ -68,7 +68,7 @@ The HStatHandler Component is the core system for managing character stats in th
   - **Stat Operations**: Includes functions for increasing, decreasing, and clamping stat values within their defined ranges.
  
  - ### Functions & Events:
-   ![functions](https://github.com/user-attachments/assets/3dafbe43-b463-4a6b-85e9-1b715d4163b3)      ![Screenshot 2024-12-30 115937](https://github.com/user-attachments/assets/b3ff17f6-1d0c-4a62-96a7-f816dadefa0f)
+   ![Image](https://github.com/user-attachments/assets/41bf9c2b-de73-4c44-8154-7bde570c291f)    ![Screenshot 2024-12-30 115937](https://github.com/user-attachments/assets/b3ff17f6-1d0c-4a62-96a7-f816dadefa0f)
    ![ondeath and ondamage](https://github.com/user-attachments/assets/e2e0cbe1-b061-4335-9e1f-50ff15cf25b2)
    ![constructure and functions c++](https://github.com/user-attachments/assets/c55445db-838a-4dea-a784-03d4a126e918)
    ![death and damage c++](https://github.com/user-attachments/assets/42811925-b7ec-4893-a6f5-c18aa022a5ab)
