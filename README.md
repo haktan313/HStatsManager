@@ -51,7 +51,7 @@ This plugin is compatible with Unreal Engine 5.2 and is designed to work in both
   - To use the BaseStat Widget for stats:
 
     Create the Widget: Add the BaseStat Widget to your UI.
-    Assign the StatHandler: Link your character's HStatHandler component to the widget's StatHandlerObject reference.
+    Assign the StatHandler into the Stat Handler Objects map: Connect the HStatHandler component to the widget by typing the name of whose HStatHandler component you are using.
 
 
 ## Architecture and Blueprint & C++ Examples
