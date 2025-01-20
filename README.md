@@ -12,7 +12,7 @@ The HStatsManager Plugin allows you to easily manage character stats in your gam
 - [Some Features](#some-features)
 - [Architecture and Blueprint & C++ Examples](#architecture-and-blueprint--c-examples)
   - [HStatHandler](#hstathandler)
-  - [All Functions & Events](#all-functions--events)  
+  - [Functions & Events](#functions--events)  
   - [HWidget_BaseStat](#hwidget_basestat)
 - [Tutorial Video](#tutorial-video)
 
