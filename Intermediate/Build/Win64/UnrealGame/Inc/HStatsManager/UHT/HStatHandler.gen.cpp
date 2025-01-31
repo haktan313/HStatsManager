@@ -325,7 +325,7 @@ void FStatReachMinValue_DelegateWrapper(const FMulticastScriptDelegate& StatReac
 #endif
 		static const UECodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UHStatHandler_DamageTo_Statics::NewProp_aboutDamage = { "aboutDamage", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(HStatHandler_eventDamageTo_Parms, aboutDamage), Z_Construct_UScriptStruct_FS_DamageInfo, METADATA_PARAMS(nullptr, 0) }; // 3067287915
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UHStatHandler_DamageTo_Statics::NewProp_aboutDamage = { "aboutDamage", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(HStatHandler_eventDamageTo_Parms, aboutDamage), Z_Construct_UScriptStruct_FS_DamageInfo, METADATA_PARAMS(nullptr, 0) }; // 4233195916
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UHStatHandler_DamageTo_Statics::NewProp_target = { "target", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(HStatHandler_eventDamageTo_Parms, target), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(nullptr, 0) };
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_UHStatHandler_DamageTo_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(HStatHandler_eventDamageTo_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UHStatHandler_DamageTo_Statics::PropPointers[] = {
@@ -566,7 +566,7 @@ void FStatReachMinValue_DelegateWrapper(const FMulticastScriptDelegate& StatReac
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UHStatHandler_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_UHStatHandler_CanDecreaseStatValue, "CanDecreaseStatValue" }, // 1838864031
-		{ &Z_Construct_UFunction_UHStatHandler_DamageTo, "DamageTo" }, // 2669186824
+		{ &Z_Construct_UFunction_UHStatHandler_DamageTo, "DamageTo" }, // 476744334
 		{ &Z_Construct_UFunction_UHStatHandler_DecreaseStatValue, "DecreaseStatValue" }, // 2602970876
 		{ &Z_Construct_UFunction_UHStatHandler_HealTo, "HealTo" }, // 3411386269
 		{ &Z_Construct_UFunction_UHStatHandler_IncreaseStatValue, "IncreaseStatValue" }, // 2638194657
@@ -765,9 +765,9 @@ void FStatReachMinValue_DelegateWrapper(const FMulticastScriptDelegate& StatReac
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HStatsManager_HostProject_Plugins_HStatsManager_Source_HStatsManager_Public_HStatHandler_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UHStatHandler, UHStatHandler::StaticClass, TEXT("UHStatHandler"), &Z_Registration_Info_UClass_UHStatHandler, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UHStatHandler), 2732230009U) },
+		{ Z_Construct_UClass_UHStatHandler, UHStatHandler::StaticClass, TEXT("UHStatHandler"), &Z_Registration_Info_UClass_UHStatHandler, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UHStatHandler), 1279145799U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HStatsManager_HostProject_Plugins_HStatsManager_Source_HStatsManager_Public_HStatHandler_h_1104055071(TEXT("/Script/HStatsManager"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HStatsManager_HostProject_Plugins_HStatsManager_Source_HStatsManager_Public_HStatHandler_h_1253559093(TEXT("/Script/HStatsManager"),
 		Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HStatsManager_HostProject_Plugins_HStatsManager_Source_HStatsManager_Public_HStatHandler_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HStatsManager_HostProject_Plugins_HStatsManager_Source_HStatsManager_Public_HStatHandler_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

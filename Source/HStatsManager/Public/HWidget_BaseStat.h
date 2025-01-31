@@ -1,6 +1,3 @@
-//HWidget_BaseStat.h
-//This is the header file for the BaseStat widget.This has the connection to the StatHandler class.
-//This will be used to display the stats of the character in the game.
 
 #pragma once
 
@@ -20,11 +17,11 @@ public:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Stats", meta = (ExposeOnSpawn = true))
 	TMap<FString, UHStatHandler*> StatHandlerObjects;
 
-//This function will return the percentage of the stat.
+//This function will return the percentage of the stat
 	UFUNCTION(BlueprintCallable, Category = "Stats")
 	float GetPercentageOfStatFromStatHandlerObject(FString WhoseStatHandler,FString statName);
 
-	//This function will return the percentage of the health.
+	//This function will return the percentage of the health
 	UFUNCTION(BlueprintCallable, Category = "Stats")
 	float GetHealthPercentageFromStatHandler(FString WhoseStatHandler);
 };

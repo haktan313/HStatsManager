@@ -5,11 +5,11 @@
 #include "HEnumsStructure_StatManager.h"
 #include "Components/ActorComponent.h"
 
-// Sets default values for this component's properties
+
 float UHStatHandler::TakeDamage(FS_DamageInfo aboutDamage)
 {
 	currentHealth -= aboutDamage.AmountOfDamage;
-	if(currentHealth <= 0)//If the health is less than or equal to 0, then broadcast the death type.
+	if(currentHealth <= 0)
 	{
 		currentHealth = 0;
 		OnDeath.Broadcast(aboutDamage.DeathReactionAnimation);
@@ -21,29 +21,27 @@ float UHStatHandler::TakeDamage(FS_DamageInfo aboutDamage)
 	return currentHealth;
 }
 
-//Heal the character
 float UHStatHandler::Heal(float amount)
 {
 	currentHealth += amount;
-	currentHealth = FMath::Clamp(currentHealth, 0.f, maxHealth);//Clamp the health between 0 and max health.
-	if(currentHealth >= maxHealth)//If the health is greater than or equal to max health, then set the health to max health.
+	currentHealth = FMath::Clamp(currentHealth, 0.f, maxHealth);
+	if(currentHealth >= maxHealth)
 	{
 		currentHealth = maxHealth;
 	}
 	return currentHealth;
 }
 
-//Decrease the stat value
 float UHStatHandler::DecreaseStat(FString& statName, float amount)
 {
-	if(statNameCurrentValue.Contains(statName) && statNameMaxValue.Contains(statName))//If the stat name is present in the current value and max value maps, then decrease the stat value.
+	if(statNameCurrentValue.Contains(statName) && statNameMaxValue.Contains(statName))
 	{
 		float& currentValue = statNameCurrentValue[statName];
 		float& maxValue = statNameMaxValue[statName];
 		currentValue -= amount;
 		if(currentValue <= 0)
 		{
-			OnStatReachMinValue.Broadcast(statName);//If the stat value is less than or equal to 0, then broadcast the stat reach min value type.
+			OnStatReachMinValue.Broadcast(statName);
 			currentValue = 0;
 		}
 		return currentValue;
@@ -51,14 +49,13 @@ float UHStatHandler::DecreaseStat(FString& statName, float amount)
 	return 0;
 }
 
-//Check if the stat value can be decreased
 bool UHStatHandler::CanDecreaseStat(FString& statName, float amount)
 {
-	if(statNameCurrentValue.Contains(statName) && statNameMaxValue.Contains(statName))//If the stat name is present in the current value and max value maps, then check if the stat value can be decreased.
+	if(statNameCurrentValue.Contains(statName) && statNameMaxValue.Contains(statName))
 	{
 		float currentValue = statNameCurrentValue[statName];
 		float maxValue = statNameMaxValue[statName];
-		if(currentValue - amount >= 0)//If the stat value is greater than or equal to 0 after decreasing the stat value, then return true.
+		if(currentValue - amount >= 0)
 		{
 			return true;
 		}
@@ -66,18 +63,17 @@ bool UHStatHandler::CanDecreaseStat(FString& statName, float amount)
 	return false;
 }
 
-//Increase the stat value
 float UHStatHandler::IncreaseStat(FString& statName, float amount)
 {
-	if(statNameCurrentValue.Contains(statName) && statNameMaxValue.Contains(statName))//If the stat name is present in the current value and max value maps, then increase the stat value.
+	if(statNameCurrentValue.Contains(statName) && statNameMaxValue.Contains(statName))
 	{
 		float& currentValue = statNameCurrentValue[statName];
 		float& maxValue = statNameMaxValue[statName];
 		currentValue += amount;
-		currentValue = FMath::Clamp(currentValue, 0.f, maxValue);//Clamp the stat value between 0 and max value.
+		currentValue = FMath::Clamp(currentValue, 0.f, maxValue);
 		if(currentValue >= maxValue)
 		{
-			OnStatReachMaxValue.Broadcast(statName);//If the stat value is greater than or equal to max value, then broadcast the stat reach max value type.
+			OnStatReachMaxValue.Broadcast(statName);
 			currentValue = maxValue;
 		}
 		return currentValue;
@@ -87,82 +83,78 @@ float UHStatHandler::IncreaseStat(FString& statName, float amount)
 
 //------------------------------------------------------------------------
 
-//Damage to the target
 float UHStatHandler::DamageTo(FS_DamageInfo aboutDamage, AActor* target)
 {
-	UHStatHandler* statHandler = Cast<UHStatHandler>(target->GetComponentByClass(UHStatHandler::StaticClass()));//Get the StatHandler component of the target.
+	UHStatHandler* statHandler = Cast<UHStatHandler>(target->GetComponentByClass(UHStatHandler::StaticClass()));
 	if(statHandler)
 	{
-		if (statHandler->CanTakeDamage)//Check if the target can take damage.
+		if (statHandler->CanTakeDamage)
 		{
-			return statHandler->TakeDamage(aboutDamage);//Take damage to the target.
+			return statHandler->TakeDamage(aboutDamage);
 		}
 		return 0;
 	}
 	return 0;
 }
 
-//Heal the target
+
 float UHStatHandler::HealTo(float amount, AActor* target)
 {
-	UHStatHandler* statHandler = Cast<UHStatHandler>(target->GetComponentByClass(UHStatHandler::StaticClass()));//Get the StatHandler component of the target.
+	UHStatHandler* statHandler = Cast<UHStatHandler>(target->GetComponentByClass(UHStatHandler::StaticClass()));
 	if(statHandler)
 	{
-		if (statHandler->CanHeal)//Check if the target can heal.
+		if (statHandler->CanHeal)
 		{
-			return statHandler->Heal(amount);//Heal the target.
+			return statHandler->Heal(amount);
 		}
 		return 0;
 	}
 	return 0;
 }
 
-//Decrease the stat value of the target
 float UHStatHandler::DecreaseStatValue(FString statName, float amount, AActor* target)
 {
-	UHStatHandler* statHandler = Cast<UHStatHandler>(target->GetComponentByClass(UHStatHandler::StaticClass()));//Get the StatHandler component of the target.
+	UHStatHandler* statHandler = Cast<UHStatHandler>(target->GetComponentByClass(UHStatHandler::StaticClass()));
 	if(statHandler)
 	{
-		if (statHandler->statNameCanDecrease.Contains(statName))//Check if the stat value can be decreased of the target.
+		if (statHandler->statNameCanDecrease.Contains(statName))
 		{
 			if (statHandler->statNameCanDecrease[statName])
 			{
-				return statHandler->DecreaseStat(statName, amount);//Decrease the stat value of the target.
+				return statHandler->DecreaseStat(statName, amount);
 			}
 			return 0;
 		}
-		return statHandler->DecreaseStat(statName, amount);//Decrease the stat value of the target.
+		return statHandler->DecreaseStat(statName, amount);
 	}
 	return 0;
 }
 
-//Check if the stat value can be decreased
 bool UHStatHandler::CanDecreaseStatValue(FString statName, float amount, AActor* target)
 {
-	UHStatHandler* statHandler = Cast<UHStatHandler>(target->GetComponentByClass(UHStatHandler::StaticClass()));//Get the StatHandler component of the target.
+	UHStatHandler* statHandler = Cast<UHStatHandler>(target->GetComponentByClass(UHStatHandler::StaticClass()));
 	if(statHandler)
 	{
-		bool a = statHandler->CanDecreaseStat(statName, amount);//Check if the stat value can be decreased of the target.
+		bool a = statHandler->CanDecreaseStat(statName, amount);
 		return a;
 	}
 	return false;
 }
 
-//Increase the stat value of the target
 float UHStatHandler::IncreaseStatValue(FString statName, float amount, AActor* target)
 {
-	UHStatHandler* statHandler = Cast<UHStatHandler>(target->GetComponentByClass(UHStatHandler::StaticClass()));//Get the StatHandler component of the target.
+	UHStatHandler* statHandler = Cast<UHStatHandler>(target->GetComponentByClass(UHStatHandler::StaticClass()));
 	if(statHandler)
 	{
-		if (statHandler->statNameCanIncrease.Contains(statName))//Check if the stat value can be increased of the target.
+		if (statHandler->statNameCanIncrease.Contains(statName))
 		{
 			if (statHandler->statNameCanIncrease[statName])
 			{
-				return statHandler->IncreaseStat(statName, amount);//Increase the stat value of the target.
+				return statHandler->IncreaseStat(statName, amount);
 			}
 			return 0;
 		}
-		return statHandler->IncreaseStat(statName, amount);//Increase the stat value of the target
+		return statHandler->IncreaseStat(statName, amount);
 	}
 	return 0;
 }

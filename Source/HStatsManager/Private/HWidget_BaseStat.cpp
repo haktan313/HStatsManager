@@ -3,10 +3,9 @@
 
 #include "HWidget_BaseStat.h"
 
-//This function will return the percentage of the stat.
 float UHWidget_BaseStat::GetPercentageOfStatFromStatHandlerObject(FString WhoseStatHandler,FString statName)
 {
-	UHStatHandler* statHandler = StatHandlerObjects.FindRef(WhoseStatHandler);//With this will get the stat handler object from the map.
+	UHStatHandler* statHandler = StatHandlerObjects.FindRef(WhoseStatHandler);
 	if (statHandler)
 	{
 		if(statHandler->statNameCurrentValue.Contains(statName) && statHandler->statNameMaxValue.Contains(statName))
@@ -19,10 +18,9 @@ float UHWidget_BaseStat::GetPercentageOfStatFromStatHandlerObject(FString WhoseS
 	return 0.f;
 }
 
-//This function will return the percentage of the health.
 float UHWidget_BaseStat::GetHealthPercentageFromStatHandler(FString WhoseStatHandler)
 {
-	UHStatHandler* statHandler = StatHandlerObjects.FindRef(WhoseStatHandler);//With this will get the stat handler object from the map.
+	UHStatHandler* statHandler = StatHandlerObjects.FindRef(WhoseStatHandler);
 	if (statHandler)
 	{
 		if(statHandler)

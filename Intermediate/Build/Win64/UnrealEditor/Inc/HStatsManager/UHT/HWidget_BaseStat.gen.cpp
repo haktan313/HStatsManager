@@ -65,9 +65,9 @@ void EmptyLinkFunctionForGeneratedCodeHWidget_BaseStat() {}
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UHWidget_BaseStat_GetHealthPercentageFromStatHandler_Statics::Function_MetaDataParams[] = {
 		{ "Category", "Stats" },
-		{ "Comment", "//This function will return the percentage of the health.\n" },
+		{ "Comment", "//This function will return the percentage of the health\n" },
 		{ "ModuleRelativePath", "Public/HWidget_BaseStat.h" },
-		{ "ToolTip", "This function will return the percentage of the health." },
+		{ "ToolTip", "This function will return the percentage of the health" },
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UHWidget_BaseStat_GetHealthPercentageFromStatHandler_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UHWidget_BaseStat, nullptr, "GetHealthPercentageFromStatHandler", nullptr, nullptr, sizeof(Z_Construct_UFunction_UHWidget_BaseStat_GetHealthPercentageFromStatHandler_Statics::HWidget_BaseStat_eventGetHealthPercentageFromStatHandler_Parms), Z_Construct_UFunction_UHWidget_BaseStat_GetHealthPercentageFromStatHandler_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UHWidget_BaseStat_GetHealthPercentageFromStatHandler_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UHWidget_BaseStat_GetHealthPercentageFromStatHandler_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UHWidget_BaseStat_GetHealthPercentageFromStatHandler_Statics::Function_MetaDataParams)) };
@@ -108,9 +108,9 @@ void EmptyLinkFunctionForGeneratedCodeHWidget_BaseStat() {}
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStatFromStatHandlerObject_Statics::Function_MetaDataParams[] = {
 		{ "Category", "Stats" },
-		{ "Comment", "//This function will return the percentage of the stat.\n" },
+		{ "Comment", "//This function will return the percentage of the stat\n" },
 		{ "ModuleRelativePath", "Public/HWidget_BaseStat.h" },
-		{ "ToolTip", "This function will return the percentage of the stat." },
+		{ "ToolTip", "This function will return the percentage of the stat" },
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStatFromStatHandlerObject_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UHWidget_BaseStat, nullptr, "GetPercentageOfStatFromStatHandlerObject", nullptr, nullptr, sizeof(Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStatFromStatHandlerObject_Statics::HWidget_BaseStat_eventGetPercentageOfStatFromStatHandlerObject_Parms), Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStatFromStatHandlerObject_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStatFromStatHandlerObject_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStatFromStatHandlerObject_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStatFromStatHandlerObject_Statics::Function_MetaDataParams)) };
@@ -150,8 +150,8 @@ void EmptyLinkFunctionForGeneratedCodeHWidget_BaseStat() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_HStatsManager,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UHWidget_BaseStat_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_UHWidget_BaseStat_GetHealthPercentageFromStatHandler, "GetHealthPercentageFromStatHandler" }, // 3885826434
-		{ &Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStatFromStatHandlerObject, "GetPercentageOfStatFromStatHandlerObject" }, // 3110225445
+		{ &Z_Construct_UFunction_UHWidget_BaseStat_GetHealthPercentageFromStatHandler, "GetHealthPercentageFromStatHandler" }, // 1982829369
+		{ &Z_Construct_UFunction_UHWidget_BaseStat_GetPercentageOfStatFromStatHandlerObject, "GetPercentageOfStatFromStatHandlerObject" }, // 592555963
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHWidget_BaseStat_Statics::Class_MetaDataParams[] = {
@@ -213,9 +213,9 @@ void EmptyLinkFunctionForGeneratedCodeHWidget_BaseStat() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HStatsManager_HostProject_Plugins_HStatsManager_Source_HStatsManager_Public_HWidget_BaseStat_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UHWidget_BaseStat, UHWidget_BaseStat::StaticClass, TEXT("UHWidget_BaseStat"), &Z_Registration_Info_UClass_UHWidget_BaseStat, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UHWidget_BaseStat), 1575521015U) },
+		{ Z_Construct_UClass_UHWidget_BaseStat, UHWidget_BaseStat::StaticClass, TEXT("UHWidget_BaseStat"), &Z_Registration_Info_UClass_UHWidget_BaseStat, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UHWidget_BaseStat), 2860155251U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HStatsManager_HostProject_Plugins_HStatsManager_Source_HStatsManager_Public_HWidget_BaseStat_h_3073341008(TEXT("/Script/HStatsManager"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HStatsManager_HostProject_Plugins_HStatsManager_Source_HStatsManager_Public_HWidget_BaseStat_h_403142632(TEXT("/Script/HStatsManager"),
 		Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HStatsManager_HostProject_Plugins_HStatsManager_Source_HStatsManager_Public_HWidget_BaseStat_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HStatsManager_HostProject_Plugins_HStatsManager_Source_HStatsManager_Public_HWidget_BaseStat_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
