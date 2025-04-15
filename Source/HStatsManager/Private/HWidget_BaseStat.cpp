@@ -7,7 +7,7 @@ float UHWidget_BaseStat::GetPercentageOfStatFromStatHandlerObject(FString WhoseS
 {
 	UHStatHandler* statHandler = StatHandlerObjects.FindRef(WhoseStatHandler);
 	if (statHandler)
-	{
+	{	
 		if(statHandler->statNameCurrentValue.Contains(statName) && statHandler->statNameMaxValue.Contains(statName))
 		{
 			float currentValue = statHandler->statNameCurrentValue[statName];

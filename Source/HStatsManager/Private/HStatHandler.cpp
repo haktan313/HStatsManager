@@ -3,6 +3,7 @@
 
 #include "HStatHandler.h"
 #include "HEnumsStructure_StatManager.h"
+#include "GameFramework/Actor.h"
 #include "Components/ActorComponent.h"
 
 

@@ -39,11 +39,11 @@ template<> HSTATSMANAGER_API UScriptStruct* StaticStruct<FS_DamageInfo>()
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_DamageReactionAnimation_MetaData[];
 #endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_DamageReactionAnimation;
+		static const UECodeGen_Private::FObjectPtrPropertyParams NewProp_DamageReactionAnimation;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_DeathReactionAnimation_MetaData[];
 #endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_DeathReactionAnimation;
+		static const UECodeGen_Private::FObjectPtrPropertyParams NewProp_DeathReactionAnimation;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const UECodeGen_Private::FStructParams ReturnStructParams;
 	};
@@ -70,14 +70,14 @@ template<> HSTATSMANAGER_API UScriptStruct* StaticStruct<FS_DamageInfo>()
 		{ "ModuleRelativePath", "Public/HEnumsStructure_StatManager.h" },
 	};
 #endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FS_DamageInfo_Statics::NewProp_DamageReactionAnimation = { "DamageReactionAnimation", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FS_DamageInfo, DamageReactionAnimation), Z_Construct_UClass_UAnimMontage_NoRegister, METADATA_PARAMS(Z_Construct_UScriptStruct_FS_DamageInfo_Statics::NewProp_DamageReactionAnimation_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FS_DamageInfo_Statics::NewProp_DamageReactionAnimation_MetaData)) };
+	const UECodeGen_Private::FObjectPtrPropertyParams Z_Construct_UScriptStruct_FS_DamageInfo_Statics::NewProp_DamageReactionAnimation = { "DamageReactionAnimation", nullptr, (EPropertyFlags)0x0014000000000005, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FS_DamageInfo, DamageReactionAnimation), Z_Construct_UClass_UAnimMontage_NoRegister, METADATA_PARAMS(Z_Construct_UScriptStruct_FS_DamageInfo_Statics::NewProp_DamageReactionAnimation_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FS_DamageInfo_Statics::NewProp_DamageReactionAnimation_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FS_DamageInfo_Statics::NewProp_DeathReactionAnimation_MetaData[] = {
 		{ "Category", "DamageInfo" },
 		{ "ModuleRelativePath", "Public/HEnumsStructure_StatManager.h" },
 	};
 #endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FS_DamageInfo_Statics::NewProp_DeathReactionAnimation = { "DeathReactionAnimation", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FS_DamageInfo, DeathReactionAnimation), Z_Construct_UClass_UAnimMontage_NoRegister, METADATA_PARAMS(Z_Construct_UScriptStruct_FS_DamageInfo_Statics::NewProp_DeathReactionAnimation_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FS_DamageInfo_Statics::NewProp_DeathReactionAnimation_MetaData)) };
+	const UECodeGen_Private::FObjectPtrPropertyParams Z_Construct_UScriptStruct_FS_DamageInfo_Statics::NewProp_DeathReactionAnimation = { "DeathReactionAnimation", nullptr, (EPropertyFlags)0x0014000000000005, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FS_DamageInfo, DeathReactionAnimation), Z_Construct_UClass_UAnimMontage_NoRegister, METADATA_PARAMS(Z_Construct_UScriptStruct_FS_DamageInfo_Statics::NewProp_DeathReactionAnimation_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FS_DamageInfo_Statics::NewProp_DeathReactionAnimation_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FS_DamageInfo_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FS_DamageInfo_Statics::NewProp_AmountOfDamage,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FS_DamageInfo_Statics::NewProp_DamageReactionAnimation,
@@ -104,15 +104,15 @@ template<> HSTATSMANAGER_API UScriptStruct* StaticStruct<FS_DamageInfo>()
 		}
 		return Z_Registration_Info_UScriptStruct_S_DamageInfo.InnerSingleton;
 	}
-	struct Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HStatsManager_HostProject_Plugins_HStatsManager_Source_HStatsManager_Public_HEnumsStructure_StatManager_h_Statics
+	struct Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_5_2_HStatsManager_HostProject_Plugins_HStatsManager_Source_HStatsManager_Public_HEnumsStructure_StatManager_h_Statics
 	{
 		static const FStructRegisterCompiledInInfo ScriptStructInfo[];
 	};
-	const FStructRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HStatsManager_HostProject_Plugins_HStatsManager_Source_HStatsManager_Public_HEnumsStructure_StatManager_h_Statics::ScriptStructInfo[] = {
-		{ FS_DamageInfo::StaticStruct, Z_Construct_UScriptStruct_FS_DamageInfo_Statics::NewStructOps, TEXT("S_DamageInfo"), &Z_Registration_Info_UScriptStruct_S_DamageInfo, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FS_DamageInfo), 4233195916U) },
+	const FStructRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_5_2_HStatsManager_HostProject_Plugins_HStatsManager_Source_HStatsManager_Public_HEnumsStructure_StatManager_h_Statics::ScriptStructInfo[] = {
+		{ FS_DamageInfo::StaticStruct, Z_Construct_UScriptStruct_FS_DamageInfo_Statics::NewStructOps, TEXT("S_DamageInfo"), &Z_Registration_Info_UScriptStruct_S_DamageInfo, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FS_DamageInfo), 3355526832U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HStatsManager_HostProject_Plugins_HStatsManager_Source_HStatsManager_Public_HEnumsStructure_StatManager_h_3857872953(TEXT("/Script/HStatsManager"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_5_2_HStatsManager_HostProject_Plugins_HStatsManager_Source_HStatsManager_Public_HEnumsStructure_StatManager_h_1457267509(TEXT("/Script/HStatsManager"),
 		nullptr, 0,
-		Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HStatsManager_HostProject_Plugins_HStatsManager_Source_HStatsManager_Public_HEnumsStructure_StatManager_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HStatsManager_HostProject_Plugins_HStatsManager_Source_HStatsManager_Public_HEnumsStructure_StatManager_h_Statics::ScriptStructInfo),
+		Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_5_2_HStatsManager_HostProject_Plugins_HStatsManager_Source_HStatsManager_Public_HEnumsStructure_StatManager_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_5_2_HStatsManager_HostProject_Plugins_HStatsManager_Source_HStatsManager_Public_HEnumsStructure_StatManager_h_Statics::ScriptStructInfo),
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

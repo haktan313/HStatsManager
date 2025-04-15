@@ -16,7 +16,7 @@ struct FS_DamageInfo
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "DamageInfo")
 	float AmountOfDamage;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "DamageInfo")
-	class UAnimMontage* DamageReactionAnimation;
+	TObjectPtr<class UAnimMontage> DamageReactionAnimation;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "DamageInfo")
-	class UAnimMontage* DeathReactionAnimation;
+	TObjectPtr<class UAnimMontage> DeathReactionAnimation;
 };
