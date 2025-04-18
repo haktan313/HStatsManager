@@ -1,5 +1,8 @@
 {
 	"OutputFiles": [
-		"..\\..\\..\\x64\\UnrealGame\\Shipping\\HStatsManager\\Module.HStatsManager.cpp.obj"
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\HStatsManager\\Module.HStatsManager.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\HStatsManager\\HStatHandler.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\HStatsManager\\HStatsManager.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\HStatsManager\\HWidget_BaseStat.cpp.obj"
 	]
 }
