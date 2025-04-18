@@ -21,7 +21,7 @@ The HStatsManager Plugin allows you to easily manage character stats in your gam
 - [Tutorial Video](#tutorial-video)
 
 ## Supported Versions
-This plugin is compatible with Unreal Engine 5.5 and is designed to work in both Blueprint and C++ projects.
+This plugin is compatible with Unreal Engine 5.2 and is designed to work in both Blueprint and C++ projects.
 
 
 ## Installation Instructions
