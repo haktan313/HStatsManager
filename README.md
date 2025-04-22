@@ -4,6 +4,8 @@
 
 **Unreal Engine 5.2: [https://www.mediafire.com/file/3infrscv27foclx/H3DPathAIPro_5.2.zip/file](https://www.mediafire.com/file/604nd0qdcq3h6r8/HStatsManager_5.2.zip/file)**
 
+**Unreal Engine 5.4: https://www.mediafire.com/file/h9kzn984ye9obmj/HStatsManager_5.4.zip/file**
+
 **Unreal Engine 5.5: [https://www.mediafire.com/file/rfigf7uvqrrlpz9/H3DPathAIPro_5.5.zip/file](https://www.mediafire.com/file/yk7xnvr32g6p6vt/HStatsManager_5.5.zip/file)**
 
 ## Introduction 
