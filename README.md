@@ -4,6 +4,8 @@
 
 **Unreal Engine 5.2: https://www.mediafire.com/file/604nd0qdcq3h6r8/HStatsManager_5.2.zip/file**
 
+**Unreal Engine 5.3: https://www.mediafire.com/file/uyhoitbwik433wc/HStatsManager_5.3.zip/file**
+
 **Unreal Engine 5.4: https://www.mediafire.com/file/h9kzn984ye9obmj/HStatsManager_5.4.zip/file**
 
 **Unreal Engine 5.5: https://www.mediafire.com/file/yk7xnvr32g6p6vt/HStatsManager_5.5.zip/file**
